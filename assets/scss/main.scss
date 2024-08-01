@@ -1,0 +1,81 @@
+body {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.page-leave-active {
+  transition: all 1s;
+}
+
+.page-enter-active {
+  transition: all 1s 1s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.page-out-leave-active {
+  transition: all 1s;
+}
+
+.page-out-enter-active {
+  transition: all 1s 1s;
+}
+
+.page-out-leave-to {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.rootPage {
+  position: relative;
+  z-index: 10;
+  box-shadow: inset 0 -1px 0 #FFFFFF22, 0 32px 64px rgba(0, 0, 0, 0.5);
+}
+.cursorpoint {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: invert(100%) saturate(0%);
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.cursor {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.cursorpoint:after {
+  width: 200vw;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursorpoint:before {
+  width: 1px;
+  height: 200vh;
+  background: linear-gradient(0, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .05) 50%, rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
