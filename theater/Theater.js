@@ -23,6 +23,7 @@ class Theater {
         this.clock = new THREE.Clock();
         this.stateManager = new StateManager(this);
         this.time = 0;
+        this.debug = false;
         this.asciiShader = asciiShader;
         this.materialParams = {
             flatShading: true,
@@ -31,14 +32,14 @@ class Theater {
             specular: 0xff3c
         };
         this.settings = {
-            debug: false,
-            orbitControls: false,
+            debug: this.debug,
+            orbitControls: this.debug,
             timeScale: 0.3,
             vertexScale: 0.0075,
             noiseScale: 50,
             savedY: 100,
             timeScaleRatioBase: 0.01,
-            timeScaleRatio: 0.01,
+            timeScaleRatio: 0,
             timeScaleRatioOpening: 0,
         };
         this.mouseposition = {
@@ -67,7 +68,7 @@ class Theater {
         this.camera.position.z = 500;
         this.camera.zoom = 0.85;
 
-        this.scene.fog = new THREE.Fog(0x000000, 0, 800);
+        if(!this.debug) this.scene.fog = new THREE.Fog(0x000000, 0, 800);
         this.scene.background = 0xff0000;
 
         this.createLights();
@@ -154,7 +155,7 @@ class Theater {
             item.addEventListener("mouseleave", (event) => { this.onMouseLeave(event); });
         });
         window.addEventListener("mouseenter", (event) => {
-            this.settings.timeScaleRatio = 0.1;
+            this.settings.timeScaleRatio = 0;
         }, false);
     }
     onMouseEnter(event) {

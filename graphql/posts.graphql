@@ -1,0 +1,41 @@
+query allPosts {
+  posts(
+    where: {status: PUBLISH, orderby: {field: DATE, order: DESC}, language: EN}
+  ) {
+    nodes {
+      title
+      slug
+      content(format: RENDERED)
+      excerpt(format: RENDERED)
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      categories {
+        edges {
+          node {
+            name
+            slug
+          }
+        }
+      }
+      author {
+        node {
+          name
+          avatar {
+            url
+          }
+        }
+      }
+      date
+      modified
+      translations {
+        title
+        slug
+        content(format: RENDERED)
+        excerpt(format: RENDERED)
+      }
+    }
+  }
+}

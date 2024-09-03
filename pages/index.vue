@@ -67,85 +67,108 @@
 </template>
 <script setup>
 import { gsap } from 'gsap';
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
 const lettering_job = ref();
+const route = useRoute();
+let isRevisited = false;
+
+// Check if session is already set
+if (localStorage.getItem("ldinit")) {
+  isRevisited = true;
+} else {
+  // Set a new session identifier
+  localStorage.setItem("ldinit", Math.random().toString(36).substring(2));
+}
+
 definePageMeta({
-    pageTransition: {
-        name: 'page-out',
-        mode: 'out-in',
-    },
-    layoutTransition: false
-})
+  pageTransition: {
+    name: localStorage.getItem("ldinit") ? 'page-out' : 'page',
+    mode: 'out-in',
+  },
+  //layoutTransition: false
+});
+
 onMounted(() => {
+  if (route.name === 'index') {
     let splitted = lettering_job.value.innerText.split('');
     lettering_job.value.innerText = "";
     for (var i in splitted) {
-        let letter = splitted[i];
-        lettering_job.value.setAttribute("aria-label", splitted.join());
-        let color = "rgba(197, 206, 255, .6)";
-        let margin = "0px";
-        if (i != 0 && splitted[i - 1] == " ") {
-            margin = "8px";
-        }
-        if (i > 6 && i < 20) {
-            color = "rgba(255, 255, 255, 1)";
-        }
-        if (i > 10 && i < 20) {
-            color = "rgba(255, 255, 255, 1);font-weight: bold;";
-        }
-        lettering_job.value.innerHTML += "<span aria-hidden='true' style='margin-left: " + margin + ";position: relative;color:" + color + ";display: inline-block;pointer-events:none;'>" + letter + "</span>";
+      let letter = splitted[i];
+      lettering_job.value.setAttribute("aria-label", splitted.join());
+      let color = "rgba(197, 206, 255, .6)";
+      let margin = "0px";
+      if (i != 0 && splitted[i - 1] == " ") {
+        margin = "8px";
+      }
+      if (i > 6 && i < 20) {
+        color = "rgba(255, 255, 255, 1)";
+      }
+      if (i > 10 && i < 20) {
+        color = "rgba(255, 255, 255, 1);font-weight: bold;";
+      }
+      lettering_job.value.innerHTML += "<span aria-hidden='true' style='margin-left: " + margin + ";position: relative;color:" + color + ";display: inline-block;pointer-events:none;'>" + letter + "</span>";
     }
 
     const tlTitle = gsap.timeline({ defaults: { stagger: 0.1, ease: "back.out" } });
+    const animationDuration = isRevisited ? 0 : 0.4;
+    const logoAnimationDuration = isRevisited ? 0 : 0.5;
+    const strokeAnimationDuration = isRevisited ? 0 : 2;
+    const fillAnimationDuration = isRevisited ? 0 : 1.5;
+
     tlTitle.fromTo("h2 span", {
-        y: 20,
-        opacity: 0,
+      y: 20,
+      opacity: 0,
     }, {
-        y: 0,
-        opacity: 1,
-        duration: .4,
-        delay: .8,
-        stagger: function (index, target, list) {
-            let stag = index * 0.05;
-            if (index > 1) {
-                stag += 1;
-            }
-            if (index > 19) {
-                stag += 1;
-            }
-            return stag;
+      y: 0,
+      opacity: 1,
+      duration: animationDuration,
+      delay: .8,
+      stagger: function (index, target, list) {
+        let stag = index * 0.05;
+        if (index > 1) {
+          stag += 1;
         }
+        if (index > 19) {
+          stag += 1;
+        }
+        return stag;
+      }
     }, "<")
 
     tlTitle.fromTo("#webdev_logo path", {
-        y: -15,
-        stroke: "rgba(255, 255, 255, 0.5)",
+      y: -15,
+      stroke: "rgba(255, 255, 255, 0.5)",
     }, {
-        y: 0,
-        duration: 0.5,
-        delay: 1
+      y: 0,
+      duration: logoAnimationDuration,
+      delay: 1
     }, "-=90%")
     tlTitle.fromTo("#webdev_logo path", {
-        strokeDashoffset: (i, item) => {
-            return item.getTotalLength();
-        },
+      strokeDashoffset: (i, item) => {
+        return item.getTotalLength();
+      },
     }, {
-        strokeDashoffset: 0,
-        duration: 2,
-        ease: "none",
+      strokeDashoffset: 0,
+      duration: strokeAnimationDuration,
+      ease: "none",
     }, "-=90%")
 
     tlTitle.fromTo("#webdev_logo path", {
-        stroke: "rgba(255, 255, 255, 0.5)",
-        fill: "rgba(182, 131, 255, 0)",
+      stroke: "rgba(255, 255, 255, 0.5)",
+      fill: "rgba(182, 131, 255, 0)",
     }, {
-        stroke: "rgba(255, 255, 255, 0)",
-        fill: "rgba(255, 255, 255, 1)",
-        duration: 1.5,
-        delay: .2,
+      stroke: "rgba(255, 255, 255, 0)",
+      fill: "rgba(255, 255, 255, 1)",
+      duration: fillAnimationDuration,
+      delay: .2,
     }, "-=50%");
     tlTitle.play();
-})
+
+    isRevisited = true;
+  }
+});
 </script>
 <style scoped>
 #webdev_logo path {

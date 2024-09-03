@@ -5,7 +5,7 @@
 import { Theater } from '../theater/Theater.js';
 
 
-if (process.browser) {
+if (import.meta.browser) {
     new Theater();
 }
 </script>

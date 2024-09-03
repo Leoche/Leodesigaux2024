@@ -1,15 +1,12 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { posts } from './content/posts.json'
+import en from './locales/en.json'
+import fr from './locales/fr.json'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", '@nuxtjs/apollo'],
-  apollo: {
-    clients: {
-      default: {
-        httpEndpoint: 'https://wp.leodesigaux.com/graphql'
-      }
-    },
-  },
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxtjs/i18n"],
+  ssr: false,
+  css: ['highlight.js/styles/github-dark.min.css'],
   experimental: {
     defaults: {
       nuxtLink: {
@@ -38,4 +35,14 @@ export default defineNuxtConfig({
     "static/*",
     "utils/*",
   ],
+  hooks: {
+    async 'nitro:config'(nitroConfig) {
+      posts.nodes.forEach(post => {
+        nitroConfig.prerender.routes.push("/blog/" + post.slug);
+      });
+    },
+  },
+  i18n: {
+    vueI18n: './i18n.config.js',
+  }
 })

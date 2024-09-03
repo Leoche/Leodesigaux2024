@@ -4,11 +4,11 @@ body {
 }
 
 .page-leave-active {
-  transition: all 1s;
+  transition: all .4s;
 }
 
 .page-enter-active {
-  transition: all 1s 1s;
+  transition: all .4s .4s;
 }
 
 .page-enter-from,
@@ -18,11 +18,11 @@ body {
 }
 
 .page-out-leave-active {
-  transition: all 1s;
+  transition: all .4s;
 }
 
 .page-out-enter-active {
-  transition: all 1s 1s;
+  transition: all .4s .4s;
 }
 
 .page-out-leave-to {
@@ -78,4 +78,20 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.hljs{
+  background: none;
+}
+.prose pre{
+  box-shadow: 0 0 0 5px #ffffff0d;
+  backdrop-filter: blur(10px);
+}
+.prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+ font-weight: 500;
+}
+.prose img {
+ border-radius: 8px;
+}
+.link-brutal {
+  @apply hover:text-white transition hover:transition-none duration-500;
 }

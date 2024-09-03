@@ -1,5 +1,6 @@
 import { HomeState } from './HomeState.js';
 import { WorkState } from './WorkState.js';
+import { BlogState } from './BlogState.js';
 import { AboutState } from './AboutState.js';
 import { gsap } from 'gsap';
 
@@ -9,6 +10,7 @@ class StateManager {
         this.states = {
             "home": new HomeState(this.theater),
             "works": new WorkState(this.theater),
+            "blog": new BlogState(this.theater),
             "about": new AboutState(this.theater),
         };
         let cleanest = window.location.pathname.split("/");
@@ -43,12 +45,13 @@ class StateManager {
         if(cleanest[1] == "") {
             cleanest[1] = "home";
         }
+        if(cleanest[1] == this.activeState) return;
         await this.leave();
         await this.enter(cleanest[1]);
     }
     async enter(state){
         if(typeof this.states[state] == "undefined") {
-            console.error("State " + state + " does not exist, reverting to home");
+            console.info("State " + state + " does not exist, reverting to home");
             state = "home";
         }
         let delay = 0.5;

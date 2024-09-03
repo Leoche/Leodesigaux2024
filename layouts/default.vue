@@ -18,13 +18,7 @@
 definePageMeta({
   pageTransition: {
     name: 'page',
-    mode: 'out-in',
-    onBeforeEnter: (el) => {
-      console.log('Before enter...')
-    },
-    onEnter: (el, done) => {
-      console.log('Before onEnter...')
-    }
+    mode: 'out-in'
   }
 })
 </script>

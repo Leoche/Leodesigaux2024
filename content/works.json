@@ -1,0 +1,366 @@
+{
+  "works": {
+    "nodes": [
+      {
+        "workId": 62,
+        "title": "Optimalog",
+        "slug": "optimalog",
+        "acf": {
+          "date": "2013-09-05T00:00:00+00:00",
+          "label": "VISIT",
+          "label2": null,
+          "link": "http://optimalog.com",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/work_test.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "PHP",
+                  "slug": "php"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "content": "<p>Complete redesign of the Optimalog.com website, including internationalization and e-commerce integration for the company.</p>\n"
+      },
+      {
+        "workId": 60,
+        "title": "Mushroom in abyssal world",
+        "slug": "mushroom-in-abyssal-world",
+        "acf": {
+          "date": "2018-04-06T00:00:00+00:00",
+          "label": "GITHUB",
+          "label2": "PLAY",
+          "link": "https://github.com/Leoche/HitboxGameJam2018",
+          "link2": "https://leodesigaux.me/hitboxmakers/2018",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/mush.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Gamedev",
+                  "slug": "gamedev"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Phaser",
+                  "slug": "phaser"
+                }
+              }
+            ]
+          },
+          "category": "27",
+          "type": "Pro"
+        },
+        "content": "<p>A game made in 48 hours during the Hitbox Makers Game Jam in 2018.</p>\n"
+      },
+      {
+        "workId": 58,
+        "title": "IRClear, Simple client IRC",
+        "slug": "irclear-simple-client-irc",
+        "acf": {
+          "date": "2013-04-18T00:00:00+00:00",
+          "label": "GITHUB",
+          "label2": "DOWNLOAD",
+          "link": "https://github.com/Leoche/IRClear",
+          "link2": "https://github.com/Leoche/IRClear/raw/master/IRClear0.2.exe",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/irclear.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Java",
+                  "slug": "java"
+                }
+              }
+            ]
+          },
+          "category": "35",
+          "type": "Pro"
+        },
+        "content": "<p>A simple and elegant IRC client in Java. A small project to practice Java.</p>\n"
+      },
+      {
+        "workId": 56,
+        "title": "Alex & Maxence",
+        "slug": "alex-maxence",
+        "acf": {
+          "date": "2017-03-09T00:00:00+00:00",
+          "label": "OFFLINE",
+          "label2": null,
+          "link": null,
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/work2_test.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Angular",
+                  "slug": "angular"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Fullstack",
+                  "slug": "fullstack"
+                }
+              }
+            ]
+          },
+          "category": "41",
+          "type": "Pro"
+        },
+        "content": "<p>Showcase website for co-authors of books and ebooks. Creation, design, and hosting.</p>\n"
+      },
+      {
+        "workId": 54,
+        "title": "LPermissions – Laravel plugin",
+        "slug": "lpermissions-laravel-plugin",
+        "acf": {
+          "date": "2017-08-11T00:00:00+00:00",
+          "label": "GITHUB",
+          "label2": null,
+          "link": "https://github.com/Leoche/laravel-lpermissions",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/lpermissions.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Laravel",
+                  "slug": "laravel"
+                }
+              },
+              {
+                "tag": {
+                  "name": "PHP",
+                  "slug": "php"
+                }
+              }
+            ]
+          },
+          "category": "41",
+          "type": "Pro"
+        },
+        "content": "<p>Laravel LPermissions adds roles and permissions to Auth Laravel 5.3. Protect your routes and your views.</p>\n"
+      },
+      {
+        "workId": 52,
+        "title": "jKonamiCode",
+        "slug": "jkonamicode",
+        "acf": {
+          "date": "2012-08-16T00:00:00+00:00",
+          "label": "GITHUB",
+          "label2": null,
+          "link": "https://github.com/Leoche/jKonamiCode",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/jko.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "jQuery",
+                  "slug": "jquery"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Library",
+                  "slug": "library"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Plugin",
+                  "slug": "plugin"
+                }
+              }
+            ]
+          },
+          "category": "35",
+          "type": "Pro"
+        },
+        "content": "<p>A customizable jQuery plugin for integrating the Konami Code on your website.</p>\n"
+      },
+      {
+        "workId": 50,
+        "title": "jGraphics",
+        "slug": "jgraphics",
+        "acf": {
+          "date": null,
+          "label": "GITHUB",
+          "label2": null,
+          "link": "https://github.com/Leoche/jGraphics",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/jGraphics.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "jQuery",
+                  "slug": "jquery"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Library",
+                  "slug": "library"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Plugin",
+                  "slug": "plugin"
+                }
+              }
+            ]
+          },
+          "category": "35",
+          "type": "Pro"
+        },
+        "content": "<p>A customizable jQuery plugin for integrating small charts on your website.</p>\n"
+      },
+      {
+        "workId": 48,
+        "title": "Digital Hero – Ludum Dare 28",
+        "slug": "digital-hero-ludum-dare-28",
+        "acf": {
+          "date": "2013-12-12T00:00:00+00:00",
+          "label": "LDJAM",
+          "label2": "PLAY",
+          "link": "http://ludumdare.com/compo/ludum-dare-28/?action=preview&uid=22206",
+          "link2": "/ludumdare/28",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/ld28.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Canvas",
+                  "slug": "canvas"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Gamedev",
+                  "slug": "gamedev"
+                }
+              }
+            ]
+          },
+          "category": "27",
+          "type": "Pro"
+        },
+        "content": "<p>A game made in 48 hours during the Ludum Dare 28 game jam, which had the theme: You Only Get One.</p>\n"
+      },
+      {
+        "workId": 46,
+        "title": "Catlife – Ludum Dare 26",
+        "slug": "catlife-ludum-dare-26",
+        "acf": {
+          "date": "2013-08-10T00:00:00+00:00",
+          "label": "LDJAM",
+          "label2": "PLAY",
+          "link": "http://ludumdare.com/compo/ludum-dare-26/?action=preview&uid=22206",
+          "link2": "/ludumdare/26",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/08/ld26.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Canvas",
+                  "slug": "canvas"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Gamedev",
+                  "slug": "gamedev"
+                }
+              }
+            ]
+          },
+          "category": "27",
+          "type": "Pro"
+        },
+        "content": "<p>A game made in 48h during the Ludum Dare 26 game jam, which had the theme: Minimalism.</p>\n"
+      },
+      {
+        "workId": 19,
+        "title": "Don’t Mess up – Ludum Dare 42",
+        "slug": "dont-mess-up-ludum-dare-42",
+        "acf": {
+          "date": "2018-08-31T00:00:00+00:00",
+          "label": "LDJAM",
+          "label2": "PLAY",
+          "link": "https://ldjam.com/events/ludum-dare/42/dont-mess-up",
+          "link2": "/ludumdare/42",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/07/ld42.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "LDJAM",
+                  "slug": "ldjam"
+                }
+              },
+              {
+                "tag": {
+                  "name": "GAME",
+                  "slug": "game"
+                }
+              }
+            ]
+          },
+          "category": "Games",
+          "type": "Perso"
+        },
+        "content": "<p>Game created in 48 hours for Ludumdare 42, Theme: Running out of space, Ranking: 60th/2500+!</p>\n"
+      }
+    ]
+  }
+}

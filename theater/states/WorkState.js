@@ -4,6 +4,7 @@ import { createNoise2D } from 'simplex-noise';
 import { lerp } from '../utils/lerp.js';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { MarchingCubes } from 'three/addons/objects/MarchingCubes.js';
 import { gsap } from 'gsap';
 class WorkState extends State {
     constructor(theater) {
@@ -15,13 +16,13 @@ class WorkState extends State {
         this.textOffsets = [
             0,
             160,
-            115,
-            80,
-            100,
+            105,
+            60,
+            90,
         ];
         this.offsetX = 0;
-        this.baseOffsetX = -100;
-        this.baseOffsetY = 200;
+        this.baseOffsetX = -70;
+        this.baseOffsetY = 175;
         this.group = new THREE.Group();
         this.rotationZ = 0;
         this.rotationX = 0;
@@ -85,21 +86,19 @@ class WorkState extends State {
         } );
         this.theater.scene.add(this.group);
 
-        const geometry = new THREE.SphereGeometry( 120, 32, 16 );
-        this.sphere = new THREE.Mesh( geometry, this.material );
-        this.sphere.position.x = 350;
-        this.sphere.position.z = 0;
-        this.sphere.position.y = -200;
-        this.sphere.animationFinished = false;
-        this.theater.scene.add(this.sphere);
-        gsap.fromTo(this.sphere.position, {
-            y: -400,
-            z: -400,
-        },{
-            y: -100,
-            z: 0,
+        let resolution = 48;
+        this.effect = new MarchingCubes( resolution, this.material, false, false, 100000 );
+        this.effect.position.set( 0, 0, -250 );
+        this.effect.scale.set( 1200, 1200, 100 );
+        this.effect.enableUvs = false;
+        this.effect.enableColors = false;
+        this.theater.scene.add( this.effect );
+        gsap.fromTo(this.effect.position, {
+            z: -600,
+        }, {
+            z: -260,
             duration: 5,
-            delay: 1,
+            delay: 2,
             ease: "back.out(2)"
         });
     }
@@ -109,13 +108,11 @@ class WorkState extends State {
         this.group.rotation.y = lerp(this.group.rotation.y, this.rotationZ, 0.01);
         this.rotationX = -this.theater.mouseposition.y * Math.PI / 8;
         this.group.rotation.x = lerp(this.group.rotation.x, this.rotationX, 0.01);
-        this.sphere.rotation.x = Date.now() * 0.0003;
-        this.sphere.rotation.z = Date.now() * 0.0002;
-
+        this.updateCubes( this.effect, time, 48 )
     }
     leave() {
         this.theater.scene.remove(this.group);
-        this.theater.scene.remove(this.sphere);
+        this.theater.scene.remove(this.effect);
         this.texts.forEach(text => {
             text.geometry.dispose();
             text.material.dispose();
@@ -124,6 +121,24 @@ class WorkState extends State {
         this.text = "Works";
         this.group = new THREE.Group();
         this.offsetX = 0;
+    }
+    updateCubes( object, time, numblobs) {
+
+        object.reset();
+        const subtract = 12;
+        const strength = 1.2 / ( ( Math.sqrt( numblobs ) - 1 ) / 4 + 1 );
+
+        for ( let i = 0; i < numblobs; i ++ ) {
+            const ballx = Math.sin( i + 1.26 * (time * 0.25) * ( 1.03 + 0.5 * Math.cos( 0.21 * i ) ) ) * 0.27 + 0.5;
+            const bally = Math.abs( Math.cos( i + 1.12 * (time * 0.5) * Math.cos( 1.22 + 0.1424 * i ) ) ) * 0.77; // dip into the floor
+            const ballz = Math.cos( i + 1.32 * (time * 0.25) * 0.1 * Math.sin( ( 0.92 + 0.53 * i ) ) ) * 0.27 + 0.5;
+
+            object.addBall( ballx, bally, ballz, strength, subtract );
+
+        }
+
+        object.update();
+
     }
 }
 

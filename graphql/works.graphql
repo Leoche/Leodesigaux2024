@@ -1,12 +1,15 @@
-import gql from 'graphql-tag'
-
-export default gql`query allWorks {
-  works {
+query allWorks {
+  works(
+    where: {status: PUBLISH, orderby: {field: DATE, order: DESC}, language: EN}
+  ) {
     nodes {
+      workId
       title
       slug
       acf {
         date
+        label
+        label2
         link
         link2
         previewUrl: preview {
@@ -22,17 +25,10 @@ export default gql`query allWorks {
             }
           }
         }
-        category {
-          categoryList: edges {
-            category: node {
-              name
-              slug
-            }
-          }
-        }
+        category
+        type
       }
       content(format: RENDERED)
     }
   }
 }
-`

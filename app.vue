@@ -23,7 +23,16 @@
     </svg>
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
+import Lenis from 'lenis'
+const lenis = new Lenis()
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 useHead({
   title: 'My App',
   meta: [
@@ -34,4 +43,9 @@ useHead({
   },
   script: [{ innerHTML: 'console.log(\'Hello world\')' }]
 })
+if(import.meta.client){
+  window.addEventListener('beforeunload', () => {
+    localStorage.removeItem("ldinit");
+  });
+}
 </script>

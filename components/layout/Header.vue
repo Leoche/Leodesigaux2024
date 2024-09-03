@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full text-white flex items-center h-12 md:px-12 md:h-24 fixed z-50 top-0 left-0 bg-[#0a0919CC] backdrop-blur-sm ">
+    <div ref="menuwrapper" class="w-full text-white flex items-center h-12 md:px-12 md:h-24 fixed z-50 top-0 left-0 bg-[#0a091900]">
         <div class="logo">
             <NuxtLink to="/" class="text-xl flex gap-2 items-center">
                 <div class="circles flex gap-1">
@@ -13,6 +13,7 @@
             </NuxtLink>
         </div>
         <nav class="ml-auto flex gap-4 text- text-slate-400">
+            <LangSwitcher />
             <a v-on:click="menuhandler" class="hover:text-white transition hover:transition-none duration-500 text-sm" to="/about"><span class="cursor-link">MENU</span></a>
             <NuxtLink class="hover:text-white transition hover:transition-none duration-500 text-sm" to="mailto:leodesigaux@gmail.com"><span class="cursor-link">CONTACT</span></NuxtLink>
             <!--        <NuxtLink class="hover:text-white transition hover:transition-none duration-500" to="/works"><span class="cursor-link">Works</span></NuxtLink>
@@ -22,7 +23,7 @@
     </div>
     <div ref="submenu" class="submenu w-full bg-primary text-white flex items-center h-0 overflow-clip top-24 fixed z-50 left-0 right-0 bg-[#0a0919CC] backdrop-blur-sm">
         <div class="flex h-full w-full relative">
-            <NuxtLink v-on:click="menuhandler" to="/about" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden" href="#">
+            <NuxtLink v-on:click="menuhandler" to="/about" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden">
                 <div class="opacity-0 hover:opacity-100 transition duration-500 absolute inset-0 h-full w-full bg-gradient-to-tr from-[#FFFFFF00] to-[#FFFFFF08]"></div>
                 <span class="menu-text shrink-0 text-4xl text-ldforegroundwhite transition-colors group-hover:text-[#ffffff] ">ABOUT</span>
                 <span class="h-[1px] -translate-y-2 mx-4 w-full relative">
@@ -32,7 +33,7 @@
                 <span class="text-ldforeground text-xl counter group-hover:text-ldwhite transition group-hover:delay-300 group-hover:duration-200">.01</span>
                 <span class="vertical-line origin-bottom absolute top-0 right-0 h-full w-[1px] bg-[#ffffff30] content-[''] z-10"></span>
             </NuxtLink>
-            <NuxtLink v-on:click="menuhandler" to="/works" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden" href="#">
+            <NuxtLink v-on:click="menuhandler" to="/works" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden">
                 <div class="opacity-0 hover:opacity-100 transition duration-500 absolute inset-0 h-full w-full bg-gradient-to-tr from-[#FFFFFF00] to-[#FFFFFF08]"></div>
                 <span class="menu-text shrink-0 text-4xl text-ldforegroundwhite transition-colors group-hover:text-[#ffffff] ">WORKS</span>
                 <span class="h-[1px] -translate-y-2 mx-4 w-full relative">
@@ -42,7 +43,7 @@
                 <span class="text-ldforeground text-xl counter group-hover:text-ldwhite transition group-hover:delay-300 group-hover:duration-200">.02</span>
                 <span class="vertical-line origin-bottom absolute top-0 right-0 h-full w-[1px] bg-[#ffffff30] content-[''] z-10"></span>
             </NuxtLink>
-            <NuxtLink v-on:click="menuhandler" to="/labs" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden" href="#">
+            <NuxtLink v-on:click="menuhandler" to="/labs" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden">
                 <div class="opacity-0 hover:opacity-100 transition duration-500 absolute inset-0 h-full w-full bg-gradient-to-tr from-[#FFFFFF00] to-[#FFFFFF08]"></div>
                 <span class="menu-text shrink-0 text-4xl text-ldforegroundwhite transition-colors group-hover:text-[#ffffff] ">LABS</span>
                 <span class="h-[1px] -translate-y-2 mx-4 w-full relative">
@@ -52,7 +53,7 @@
                 <span class="text-ldforeground text-xl counter group-hover:text-ldwhite transition group-hover:delay-300 group-hover:duration-200">.03</span>
                 <span class="vertical-line origin-bottom absolute top-0 right-0 h-full w-[1px] bg-[#ffffff30] content-[''] z-10"></span>
             </NuxtLink>
-            <NuxtLink v-on:click="menuhandler" to="/blog" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden" href="#">
+            <NuxtLink v-on:click="menuhandler" to="/blog" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden">
                 <div class="opacity-0 hover:opacity-100 transition duration-500 absolute inset-0 h-full w-full bg-gradient-to-tr from-[#FFFFFF00] to-[#FFFFFF08]"></div>
                 <span class="menu-text shrink-0 text-4xl text-ldforegroundwhite transition-colors group-hover:text-[#ffffff]">BLOG</span>
                 <span class="h-[1px] -translate-y-2 mx-4 w-full relative">
@@ -62,7 +63,7 @@
                 <span class="text-ldforeground text-xl counter group-hover:text-ldwhite transition group-hover:delay-300 group-hover:duration-200">.04</span>
                 <span class="vertical-line origin-bottom absolute top-0 right-0 h-full w-[1px] bg-[#ffffff30] content-[''] z-10"></span>
             </NuxtLink>
-            <NuxtLink v-on:click="menuhandler" to="mailto:leodesigaux@gmail.com" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden" href="#">
+            <NuxtLink v-on:click="menuhandler" to="mailto:leodesigaux@gmail.com" class="h-full w-full p-4 flex items-end relative transition-all menu-link group overflow-hidden">
                 <div class="opacity-0 hover:opacity-100 transition duration-500 absolute inset-0 h-full w-full bg-gradient-to-tr from-[#FFFFFF00] to-[#FFFFFF08]"></div>
                 <span class="menu-text shrink-0 text-4xl text-ldforegroundwhite transition-colors group-hover:text-[#ffffff]">CONTACT</span>
                 <span class="h-[1px] -translate-y-2 mx-4 w-full relative">
@@ -80,14 +81,14 @@
 import gsap from 'gsap'
 const menu = ref()
 const submenu = ref()
-
+const menuwrapper = ref()
 
 let tl = gsap.timeline({
     defaults: {
         duration: 0.3,
     }
 });
-
+ 
 onMounted(() => {
     document.querySelectorAll(".menu-text").forEach(item => {
         let splitted = item.innerText.split('');
@@ -99,6 +100,13 @@ onMounted(() => {
         }
     });
     tl.pause()
+    tl.fromTo(submenu.value, {
+        height: 0,
+        opacity: 0,
+    }, {
+        height: 192,
+        opacity: 1,
+    }, 0)
     tl.fromTo(submenu.value, {
         height: 0,
         opacity: 0,
@@ -133,6 +141,13 @@ onMounted(() => {
         scaleX: 1,
         stagger: 0.2,
     }, 0.8);
+    tl.fromTo(menuwrapper.value, {
+        backgroundColor: "#0a091900",
+        backdropFilter: "blur(0px)",
+    }, {
+        backgroundColor: "#0a0919CC",
+        backdropFilter: "blur(8px)",
+    }, 0);
     tl.fromTo(".counter", {
         x: 64,
     }, {

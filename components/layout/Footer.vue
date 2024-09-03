@@ -22,10 +22,10 @@
                             <div class="w-4/12"></div>
                             <nav class="ml-auto flex flex-col gap-2 text-sm text-slate-400 w-4/12">
                                 <span class="text-ldwhite pb-4">NAVIGATION</span>
-                                <NuxtLink class="hover:text-white transition hover:transition-none duration-500 mr-auto" to="/about"><span class="cursor-link">About</span></NuxtLink>
-                                <NuxtLink class="hover:text-white transition hover:transition-none duration-500 mr-auto" to="/works"><span class="cursor-link">Works</span></NuxtLink>
-                                <NuxtLink class="hover:text-white transition hover:transition-none duration-500 mr-auto" to="/experiments"><span class="cursor-link">Experiments</span></NuxtLink>
-                                <NuxtLink class="hover:text-white transition hover:transition-none duration-500 mr-auto" to="/contact"><span class="cursor-link">Contact</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/about"><span class="cursor-link">About</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/works"><span class="cursor-link">Works</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/experiments"><span class="cursor-link">Experiments</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/contact"><span class="cursor-link">Contact</span></NuxtLink>
                             </nav>
                         </div>
                     </div>
