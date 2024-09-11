@@ -1,7 +1,7 @@
 <template>
     <div>
-        <LayoutHeader />
-        <div class="slot">
+        <LayoutHeader @menuopen="menuopened" />
+        <div class="slot transition origin-top relative z-10 duration-[2000ms]" :class="{ 'scale-95': isMenuOpen }">
             <slot />
         </div>
         <ClientOnly>
@@ -21,4 +21,8 @@ definePageMeta({
     mode: 'out-in'
   }
 })
+const isMenuOpen = ref(false)
+const menuopened = (isOpened: boolean) => {
+  isMenuOpen.value = isOpened
+}
 </script>

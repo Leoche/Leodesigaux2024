@@ -1,6 +1,5 @@
 export function useDate(dateStr, locale) {
     let lang = "en-US";
-    console.log(locale)
     if(locale.includes("fr")){
         lang = "fr-FR";
     }

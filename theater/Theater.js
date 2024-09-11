@@ -210,14 +210,16 @@ class Theater {
     }
     updateCursor (){
         if(this.cursormouseLookAt != null){
-            this.cursormouseHeight = lerp(this.cursormouseHeight, 0, 0.4);
-            this.cursormouseWidth = lerp(this.cursormouseWidth, this.cursormouseLookAt.getBoundingClientRect().width, 0.2);
+            if(this.cursormouseLookAt.classList.contains("circle_container")){
+            this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width/2 + 32 , 0.2);
+            } else {
+            this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width/2 + 6 , 0.2);
+            }
             this.cursormouseposition.x = lerp(this.cursormouseposition.x, this.cursormouseLookAt.getBoundingClientRect().left + this.cursormouseLookAt.getBoundingClientRect().width/2, 0.2);
-            this.cursormouseposition.y = lerp(this.cursormouseposition.y, this.cursormouseLookAt.getBoundingClientRect().top + 2 + this.cursormouseLookAt.getBoundingClientRect().height/2, 0.2);
+            this.cursormouseposition.y = lerp(this.cursormouseposition.y, this.cursormouseLookAt.getBoundingClientRect().top + 1 + this.cursormouseLookAt.getBoundingClientRect().height/2, 0.2);
             document.querySelector('#textCursor').textContent  = ``;
             document.querySelector('.cursor text').setAttribute("fill", "white");
             this.cursormouseDx = lerp(this.cursormouseDx, 0, 0.2);
-            this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width/2 + 6 , 0.2);
         } else {
             this.cursormouseHeight = lerp(this.cursormouseHeight, 32, 0.2);
             this.cursormouseWidth = lerp(this.cursormouseWidth, 32, 0.2);

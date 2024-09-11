@@ -1,4 +1,5 @@
 <template>
+    <div class="menubase">
     <div ref="menuwrapper" class="w-full text-white flex items-center h-12 md:px-12 md:h-24 fixed z-50 top-0 left-0 bg-[#0a091900]">
         <div class="logo">
             <NuxtLink to="/" class="text-xl flex gap-2 items-center">
@@ -14,8 +15,9 @@
         </div>
         <nav class="ml-auto flex gap-4 text- text-slate-400">
             <LangSwitcher />
-            <a v-on:click="menuhandler" class="hover:text-white transition hover:transition-none duration-500 text-sm" to="/about"><span class="cursor-link">MENU</span></a>
-            <NuxtLink class="hover:text-white transition hover:transition-none duration-500 text-sm" to="mailto:leodesigaux@gmail.com"><span class="cursor-link">CONTACT</span></NuxtLink>
+            <a v-on:click="menuhandler" class="hover:text-white transition hover:transition-none duration-500 text-sm" to="/about"><span class="cursor-link">
+              <Slotmachine title1="MENU " title2="CLOSE" ref="menuSlot"/>  
+            </span></a>
             <!--        <NuxtLink class="hover:text-white transition hover:transition-none duration-500" to="/works"><span class="cursor-link">Works</span></NuxtLink>
             <NuxtLink class="hover:text-white transition hover:transition-none duration-500" to="/experiments"><span class="cursor-link">Experiments</span></NuxtLink>
             <NuxtLink class="hover:text-white transition hover:transition-none duration-500" to="/contact"><span class="cursor-link">Contact</span></NuxtLink> -->
@@ -76,12 +78,15 @@
             <span class="horizontal-line origin-right absolute top-0 left-0 w-full h-[1px] bg-[#ffffff30] content-[''] z-10"></span>
         </div>
     </div>
+    <div ref="overlaymenu" v-on:click="menuClose" :class="{'h-screen': menuOpened, 'h-0': !menuOpened}" class="duration-1000 overlay w-full bg-primary text-white flex items-center overflow-clip top-0 fixed z-40 left-0 right-0 transition-all bg-[#0a091933] backdrop-blur-sm"></div>
+    </div>
 </template>
 <script setup>
 import gsap from 'gsap'
 const menu = ref()
 const submenu = ref()
 const menuwrapper = ref()
+const menuSlot = ref()
 
 let tl = gsap.timeline({
     defaults: {
@@ -157,15 +162,36 @@ onMounted(() => {
     }, 0.8);
 })
 
+const emit = defineEmits(['menuopen'])
+const menuOpened = ref(false)
 function menuhandler() {
     if (!submenu.value.classList.contains("opened")) {
         submenu.value.classList.add("opened")
         submenu.value.classList.remove("pointer-events-none")
+        tl.duration(2)
         tl.play()
+        menuOpened.value = true
+        menuSlot.value.toggle(menuOpened.value)
+        emit('menuopen', menuOpened.value)
     } else {
         submenu.value.classList.remove("opened")
         submenu.value.classList.remove("pointer-events-none")
+        tl.duration(.8)
         tl.reverse()
+        menuOpened.value = false
+        menuSlot.value.toggle(menuOpened.value)
+        emit('menuopen', menuOpened.value)
+    }
+}
+
+function menuClose() {
+    if (submenu.value.classList.contains("opened")) {
+        submenu.value.classList.remove("opened")
+        submenu.value.classList.add("pointer-events-none")
+        tl.reverse()
+        menuOpened.value = false
+        menuSlot.value.toggle(menuOpened.value)
+        emit('menuopen', menuOpened.value)
     }
 }
 </script>

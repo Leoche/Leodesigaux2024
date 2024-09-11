@@ -5,6 +5,7 @@
         "workId": 62,
         "title": "Optimalog",
         "slug": "optimalog",
+        "content": "<p>Complete redesign of the Optimalog.com website, including internationalization and e-commerce integration for the company.</p>\n",
         "acf": {
           "date": "2013-09-05T00:00:00+00:00",
           "label": "VISIT",
@@ -29,12 +30,18 @@
           "category": "Web",
           "type": "Pro"
         },
-        "content": "<p>Complete redesign of the Optimalog.com website, including internationalization and e-commerce integration for the company.</p>\n"
+        "translations": [
+          {
+            "title": "Optimalog",
+            "content": "<p>Refonte complète du site web Optimalog.com, incluant l'internationalisation et l'intégration du e-commerce pour l'entreprise.</p>\n"
+          }
+        ]
       },
       {
         "workId": 60,
         "title": "Mushroom in abyssal world",
         "slug": "mushroom-in-abyssal-world",
+        "content": "<p>A game made in 48 hours during the Hitbox Makers Game Jam in 2018.</p>\n",
         "acf": {
           "date": "2018-04-06T00:00:00+00:00",
           "label": "GITHUB",
@@ -65,12 +72,18 @@
           "category": "27",
           "type": "Pro"
         },
-        "content": "<p>A game made in 48 hours during the Hitbox Makers Game Jam in 2018.</p>\n"
+        "translations": [
+          {
+            "title": "Mushroom in abyssal world",
+            "content": "<p>Un jeu créé en 48 heures lors du Hitbox Makers Game Jam en 2018.</p>\n"
+          }
+        ]
       },
       {
         "workId": 58,
         "title": "IRClear, Simple client IRC",
         "slug": "irclear-simple-client-irc",
+        "content": "<p>A simple and elegant IRC client in Java. A small project to practice Java.</p>\n",
         "acf": {
           "date": "2013-04-18T00:00:00+00:00",
           "label": "GITHUB",
@@ -92,15 +105,21 @@
               }
             ]
           },
-          "category": "35",
-          "type": "Pro"
+          "category": "Softwares",
+          "type": "Perso"
         },
-        "content": "<p>A simple and elegant IRC client in Java. A small project to practice Java.</p>\n"
+        "translations": [
+          {
+            "title": "IRClear, Simple client IRC",
+            "content": "<p>Un client IRC simple et élégant en Java. Un petit projet pour pratiquer Java.</p>\n"
+          }
+        ]
       },
       {
         "workId": 56,
         "title": "Alex & Maxence",
         "slug": "alex-maxence",
+        "content": "<p>Showcase website for co-authors of books and ebooks. Creation, design, and hosting.</p>\n",
         "acf": {
           "date": "2017-03-09T00:00:00+00:00",
           "label": "OFFLINE",
@@ -128,15 +147,21 @@
               }
             ]
           },
-          "category": "41",
+          "category": "Web",
           "type": "Pro"
         },
-        "content": "<p>Showcase website for co-authors of books and ebooks. Creation, design, and hosting.</p>\n"
+        "translations": [
+          {
+            "title": "Alex & Maxence",
+            "content": "<p>Site web vitrine pour les co-auteurs de livres et d'ebooks. Création, design et hébergement.</p>\n"
+          }
+        ]
       },
       {
         "workId": 54,
         "title": "LPermissions – Laravel plugin",
         "slug": "lpermissions-laravel-plugin",
+        "content": "<p>Laravel LPermissions adds roles and permissions to Auth Laravel 5.3. Protect your routes and your views.</p>\n",
         "acf": {
           "date": "2017-08-11T00:00:00+00:00",
           "label": "GITHUB",
@@ -164,15 +189,21 @@
               }
             ]
           },
-          "category": "41",
+          "category": "Web",
           "type": "Pro"
         },
-        "content": "<p>Laravel LPermissions adds roles and permissions to Auth Laravel 5.3. Protect your routes and your views.</p>\n"
+        "translations": [
+          {
+            "title": "LPermissions – Laravel plugin",
+            "content": "<p>Laravel LPermissions ajoute des rôles et des permissions à Auth Laravel 5.3. Protégez vos routes et vos vues.</p>\n"
+          }
+        ]
       },
       {
         "workId": 52,
         "title": "jKonamiCode",
         "slug": "jkonamicode",
+        "content": "<p>A customizable jQuery plugin for integrating the Konami Code on your website.</p>\n",
         "acf": {
           "date": "2012-08-16T00:00:00+00:00",
           "label": "GITHUB",
@@ -206,15 +237,21 @@
               }
             ]
           },
-          "category": "35",
+          "category": "Web",
           "type": "Pro"
         },
-        "content": "<p>A customizable jQuery plugin for integrating the Konami Code on your website.</p>\n"
+        "translations": [
+          {
+            "title": "jKonamiCode",
+            "content": "<p>Un plugin jQuery personnalisable pour intégrer le Code Konami sur votre site web.</p>\n"
+          }
+        ]
       },
       {
         "workId": 50,
         "title": "jGraphics",
         "slug": "jgraphics",
+        "content": "<p>A customizable jQuery plugin for integrating small charts on your website.</p>\n",
         "acf": {
           "date": null,
           "label": "GITHUB",
@@ -248,15 +285,21 @@
               }
             ]
           },
-          "category": "35",
+          "category": "Web",
           "type": "Pro"
         },
-        "content": "<p>A customizable jQuery plugin for integrating small charts on your website.</p>\n"
+        "translations": [
+          {
+            "title": "jGraphics",
+            "content": "<p>Un plugin jQuery personnalisable pour intégrer de petits graphiques sur votre site web.</p>\n"
+          }
+        ]
       },
       {
         "workId": 48,
         "title": "Digital Hero – Ludum Dare 28",
         "slug": "digital-hero-ludum-dare-28",
+        "content": "<p>A game made in 48 hours during the Ludum Dare 28 game jam, which had the theme: You Only Get One.</p>\n",
         "acf": {
           "date": "2013-12-12T00:00:00+00:00",
           "label": "LDJAM",
@@ -284,15 +327,21 @@
               }
             ]
           },
-          "category": "27",
-          "type": "Pro"
+          "category": "Games",
+          "type": "Perso"
         },
-        "content": "<p>A game made in 48 hours during the Ludum Dare 28 game jam, which had the theme: You Only Get One.</p>\n"
+        "translations": [
+          {
+            "title": "Digital Hero – Ludum Dare 28",
+            "content": "<p>Un jeu créé en 48 heures lors de la game jam Ludum Dare 28, qui avait pour thème : You Only Get One.</p>\n"
+          }
+        ]
       },
       {
         "workId": 46,
         "title": "Catlife – Ludum Dare 26",
         "slug": "catlife-ludum-dare-26",
+        "content": "<p>A game made in 48h during the Ludum Dare 26 game jam, which had the theme: Minimalism.</p>\n",
         "acf": {
           "date": "2013-08-10T00:00:00+00:00",
           "label": "LDJAM",
@@ -320,15 +369,21 @@
               }
             ]
           },
-          "category": "27",
-          "type": "Pro"
+          "category": "Games",
+          "type": "Perso"
         },
-        "content": "<p>A game made in 48h during the Ludum Dare 26 game jam, which had the theme: Minimalism.</p>\n"
+        "translations": [
+          {
+            "title": "Catlife – Ludum Dare 26",
+            "content": "<p>Un jeu créé en 48 heures lors de la game jam Ludum Dare 26, qui avait pour thème : le minimalisme.</p>\n"
+          }
+        ]
       },
       {
         "workId": 19,
         "title": "Don’t Mess up – Ludum Dare 42",
         "slug": "dont-mess-up-ludum-dare-42",
+        "content": "<p>Game created in 48 hours for Ludumdare 42, Theme: Running out of space, Ranking: 60th/2500+!</p>\n",
         "acf": {
           "date": "2018-08-31T00:00:00+00:00",
           "label": "LDJAM",
@@ -359,7 +414,12 @@
           "category": "Games",
           "type": "Perso"
         },
-        "content": "<p>Game created in 48 hours for Ludumdare 42, Theme: Running out of space, Ranking: 60th/2500+!</p>\n"
+        "translations": [
+          {
+            "title": "Don’t Mess up – Ludum Dare 42",
+            "content": "<p>Jeu réalisé en 48h pour la Ludumdare 42, Thème: Running out of space, Place: 60ème/2500+!</p>\n"
+          }
+        ]
       }
     ]
   }

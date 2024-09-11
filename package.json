@@ -7,7 +7,6 @@
     "dev": "node pregenerate.js && nuxt dev --watch",
     "generate": "node pregenerate.js && nuxt generate",
     "preview": "node pregenerate.js && nuxt preview",
-    "postinstall": "node pregenerate.js && nuxt prepare",
     "generateContent": "node pregenerate.js"
   },
   "dependencies": {

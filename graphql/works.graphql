@@ -6,6 +6,7 @@ query allWorks {
       workId
       title
       slug
+      content(format: RENDERED)
       acf {
         date
         label
@@ -28,7 +29,10 @@ query allWorks {
         category
         type
       }
-      content(format: RENDERED)
+      translations {
+        title
+        content(format: RENDERED)
+      }
     }
   }
 }

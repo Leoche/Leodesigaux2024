@@ -6,7 +6,7 @@
     <div class="cursorpoint"></div>
     <svg class="cursor" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <!-- 32x32 centered circle with white border -->
-      <circle cx="100" cy="100" r="32" stroke="white" stroke-width="1" fill="none" />
+      <circle cx="100" cy="100" r="32" stroke="white" stroke-width="2" fill="none" />
 
       <!-- Invisible 96x96 centered circle for text path -->
       <path id="textCircle" fill="none" d="

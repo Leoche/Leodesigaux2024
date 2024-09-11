@@ -22,7 +22,7 @@ class AboutState extends State {
             110,
         ];
         this.offsetX = 0;
-        this.baseOffsetX = 100;
+        this.baseOffsetX = -50;
         this.baseOffsetY = 150;
         this.group = new THREE.Group();
         this.rotationZ = 0;
@@ -114,7 +114,7 @@ class AboutState extends State {
         loaderGltf.load("/models/head3.glb", (gltf) => {
             gltf.scenes[0].children[0].scale.set(this.headScale, this.headScale, this.headScale);
             gltf.scenes[0].children[0].material = this.material;
-            gltf.scenes[0].children[0].position.x = -400;
+            gltf.scenes[0].children[0].position.x = -600;
             gltf.scenes[0].children[0].position.y = 0;
             console.log(gltf.scenes[0].children[0])
             gltf.scenes[0].children[0].children.forEach(child => {
@@ -122,7 +122,6 @@ class AboutState extends State {
             });
             this.gltf = gltf.scenes[0].children[0];
             this.gltf.position.z = 500;
-            this.group.add(this.gltf);
             gsap.fromTo(this.gltf.position, {
                 z: -800,
             },{
@@ -130,7 +129,7 @@ class AboutState extends State {
                 duration: 5,
                 ease: "power3.out",
             });
-            //this.theater.scene.add(this.gltfGroup);
+            this.theater.scene.add(this.gltf);
         });
 
         this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 2), -10);
@@ -154,6 +153,9 @@ class AboutState extends State {
         
         this.gltf.position.y = Math.sin(time) * 50;
         this.gltf.lookAt(this.pointOfIntersection);
+
+        const scrollTop = document.documentElement.scrollTop;
+        this.group.position.y = lerp(this.group.position.y, scrollTop * 0.3, 0.05);
     }
     leave() {
         this.texts.forEach(text => {
