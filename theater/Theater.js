@@ -11,6 +11,7 @@ import { asciiShader } from './utils/asciiShader.js';
 
 import { StateManager } from './states/StateManager.js';
 import { gsap } from 'gsap';
+import { MouseManager } from './MouseManager.js';
 
 class Theater {
 
@@ -21,6 +22,7 @@ class Theater {
         this.controls = null;
         this.scene = new THREE.Scene();
         this.clock = new THREE.Clock();
+        this.mouseManager = new MouseManager(this);
         this.stateManager = new StateManager(this);
         this.time = 0;
         this.debug = false;
@@ -42,27 +44,6 @@ class Theater {
             timeScaleRatio: 0,
             timeScaleRatioOpening: 0,
         };
-        this.mouseposition = {
-            x: 0,
-            y: 0
-        }
-        this.mousepositionReal = {
-            x: window.innerWidth/2,
-            y: window.innerHeight/2
-        }
-        this.cursormouseposition = {
-            x: 0,
-            y: 0
-        }
-        this.cursormousepointposition = {
-            x: 0,
-            y: 0
-        }
-        this.cursormouseLookAt = null;
-        this.cursormouseWidth = 32;
-        this.cursormouseHeight = 32;
-        this.cursormouseDx = 50
-        this.cursormouseR = 16
 
         this.camera.position.y = 135;
         this.camera.position.z = 500;
@@ -133,36 +114,16 @@ class Theater {
     }
 
     setupMouse() {
-        window.addEventListener("mousemove", (event) => {
-            this.mouseposition = {
-                x: ((event.clientX / window.innerWidth) * 2) - 1,
-                y: ((event.clientY / window.innerHeight) * 2) - 1
-            }
-            this.mousepositionReal = {
-                x: event.clientX,
-                y: event.clientY
-            }
-        }, false);
-        window.addEventListener("mousedown", (event) => {
+        this.mouseManager = new MouseManager();
+        this.mouseManager.addEvent("mousedown", (event) => {
             this.settings.timeScaleRatio = 0.1;
         }, false);
-        window.addEventListener("mouseup", (event) => {
+        this.mouseManager.addEvent("mouseup", (event) => {
             this.settings.timeScaleRatio = 0;
         }, false);
-        const linkItems = document.querySelectorAll(".cursor-link");
-        linkItems.forEach(item => {
-            item.addEventListener("mouseenter", (event) => { this.onMouseEnter(event); });
-            item.addEventListener("mouseleave", (event) => { this.onMouseLeave(event); });
+        this.mouseManager.addEvent("mouseenter", (event) => {
+            this.settings.timeScaleRatio = 0;
         });
-        window.addEventListener("mouseenter", (event) => {
-            this.settings.timeScaleRatio = 0;
-        }, false);
-    }
-    onMouseEnter(event) {
-        this.cursormouseLookAt = event.target;
-    }
-    onMouseLeave(event) {
-        this.cursormouseLookAt = null;
     }
 
     onWindowResize() {
@@ -200,40 +161,13 @@ class Theater {
             this.composer.render();
         }
         this.stateManager.render(this.time);
-        this.updateCursor();
         if(this.settings.timeScaleRatioOpening > 0) {
             this.settings.timeScaleRatioOpening -= 0.0003;
         }
         if(this.settings.timeScaleRatioOpening < 0) {
             this.settings.timeScaleRatioOpening = 0;
         }
-    }
-    updateCursor (){
-        if(this.cursormouseLookAt != null){
-            if(this.cursormouseLookAt.classList.contains("circle_container")){
-            this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width/2 + 32 , 0.2);
-            } else {
-            this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width/2 + 6 , 0.2);
-            }
-            this.cursormouseposition.x = lerp(this.cursormouseposition.x, this.cursormouseLookAt.getBoundingClientRect().left + this.cursormouseLookAt.getBoundingClientRect().width/2, 0.2);
-            this.cursormouseposition.y = lerp(this.cursormouseposition.y, this.cursormouseLookAt.getBoundingClientRect().top + 1 + this.cursormouseLookAt.getBoundingClientRect().height/2, 0.2);
-            document.querySelector('#textCursor').textContent  = ``;
-            document.querySelector('.cursor text').setAttribute("fill", "white");
-            this.cursormouseDx = lerp(this.cursormouseDx, 0, 0.2);
-        } else {
-            this.cursormouseHeight = lerp(this.cursormouseHeight, 32, 0.2);
-            this.cursormouseWidth = lerp(this.cursormouseWidth, 32, 0.2);
-            document.querySelector('.cursor text').setAttribute("fill", "#8f8da9");
-            this.cursormouseposition.x = lerp(this.cursormouseposition.x, this.mousepositionReal.x, 0.15);
-            this.cursormouseposition.y = lerp(this.cursormouseposition.y, this.mousepositionReal.y, 0.15);
-            document.querySelector('#textCursor').textContent  = `${Math.round(this.mousepositionReal.x)} x ${Math.round(this.mousepositionReal.y)}`;
-            this.cursormouseDx = lerp(this.cursormouseDx, 50, 0.2);
-            this.cursormouseR = lerp(this.cursormouseR, 16, 0.2);
-        }
-        document.querySelector('.cursor circle').setAttribute("r", this.cursormouseR);
-        document.querySelector('.cursor text').setAttribute("dx", this.cursormouseDx);
-        document.querySelector('.cursorpoint').style.transform = `translate(${this.mousepositionReal.x}px, ${this.mousepositionReal.y}px)`;
-        document.querySelector('.cursor').style.transform = `translate(${this.cursormouseposition.x}px, ${this.cursormouseposition.y}px)`;
+        this.mouseManager.animate(this.time);
     }
 }
 

@@ -52,10 +52,10 @@ body {
 
 .cursor {
   position: fixed;
-  top: -100px;
-  left: -100px;
-  width: 200px;
-  height: 200px;
+  top: -300px;
+  left: -300px;
+  width: 600px;
+  height: 600px;
   z-index: 10000;
   pointer-events: none;
 }

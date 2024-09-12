@@ -1,0 +1,34 @@
+query allLabs {
+  experiments(
+    where: {status: PUBLISH, orderby: {field: DATE, order: DESC}, language: EN}
+  ) {
+    nodes {
+      content(format: RENDERED)
+      slug
+      title
+      translations {
+        content
+        title
+      }
+      labsAcf {
+        category
+        css
+        js
+        year
+        iframe
+        html
+        github
+        img {
+          node {
+            mediaItemUrl
+          }
+        }
+        preview {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+}

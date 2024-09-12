@@ -42,7 +42,7 @@ async function fetchGraphQL(query) {
 
     const json = await response.json();
     if (json.errors) {
-        console.error('Errors:', json.errors);
+        console.error('Errors:', JSON.stringify(json.errors, null, 2));
         throw new Error('Failed to fetch GraphQL data');
     }
 

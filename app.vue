@@ -4,13 +4,13 @@
       <NuxtPage />
     </NuxtLayout>
     <div class="cursorpoint"></div>
-    <svg class="cursor" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="cursor" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
       <!-- 32x32 centered circle with white border -->
-      <circle cx="100" cy="100" r="32" stroke="white" stroke-width="2" fill="none" />
+      <circle cx="300" cy="300" r="32" stroke="white" stroke-width="1" fill="none" />
 
       <!-- Invisible 96x96 centered circle for text path -->
       <path id="textCircle" fill="none" d="
-    M 70, 100
+    M 270, 300
     a 30,30 0 1,1 60,0
     30,30 0 1,1 -60,0
     " />

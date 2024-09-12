@@ -7,7 +7,7 @@ query allWorks {
       title
       slug
       content(format: RENDERED)
-      acf {
+      workAcf {
         date
         label
         label2

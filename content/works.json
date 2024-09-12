@@ -6,7 +6,7 @@
         "title": "Optimalog",
         "slug": "optimalog",
         "content": "<p>Complete redesign of the Optimalog.com website, including internationalization and e-commerce integration for the company.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2013-09-05T00:00:00+00:00",
           "label": "VISIT",
           "label2": null,
@@ -42,7 +42,7 @@
         "title": "Mushroom in abyssal world",
         "slug": "mushroom-in-abyssal-world",
         "content": "<p>A game made in 48 hours during the Hitbox Makers Game Jam in 2018.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2018-04-06T00:00:00+00:00",
           "label": "GITHUB",
           "label2": "PLAY",
@@ -84,7 +84,7 @@
         "title": "IRClear, Simple client IRC",
         "slug": "irclear-simple-client-irc",
         "content": "<p>A simple and elegant IRC client in Java. A small project to practice Java.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2013-04-18T00:00:00+00:00",
           "label": "GITHUB",
           "label2": "DOWNLOAD",
@@ -120,7 +120,7 @@
         "title": "Alex & Maxence",
         "slug": "alex-maxence",
         "content": "<p>Showcase website for co-authors of books and ebooks. Creation, design, and hosting.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2017-03-09T00:00:00+00:00",
           "label": "OFFLINE",
           "label2": null,
@@ -162,7 +162,7 @@
         "title": "LPermissions – Laravel plugin",
         "slug": "lpermissions-laravel-plugin",
         "content": "<p>Laravel LPermissions adds roles and permissions to Auth Laravel 5.3. Protect your routes and your views.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2017-08-11T00:00:00+00:00",
           "label": "GITHUB",
           "label2": null,
@@ -204,7 +204,7 @@
         "title": "jKonamiCode",
         "slug": "jkonamicode",
         "content": "<p>A customizable jQuery plugin for integrating the Konami Code on your website.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2012-08-16T00:00:00+00:00",
           "label": "GITHUB",
           "label2": null,
@@ -252,7 +252,7 @@
         "title": "jGraphics",
         "slug": "jgraphics",
         "content": "<p>A customizable jQuery plugin for integrating small charts on your website.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": null,
           "label": "GITHUB",
           "label2": null,
@@ -300,7 +300,7 @@
         "title": "Digital Hero – Ludum Dare 28",
         "slug": "digital-hero-ludum-dare-28",
         "content": "<p>A game made in 48 hours during the Ludum Dare 28 game jam, which had the theme: You Only Get One.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2013-12-12T00:00:00+00:00",
           "label": "LDJAM",
           "label2": "PLAY",
@@ -342,7 +342,7 @@
         "title": "Catlife – Ludum Dare 26",
         "slug": "catlife-ludum-dare-26",
         "content": "<p>A game made in 48h during the Ludum Dare 26 game jam, which had the theme: Minimalism.</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2013-08-10T00:00:00+00:00",
           "label": "LDJAM",
           "label2": "PLAY",
@@ -384,7 +384,7 @@
         "title": "Don’t Mess up – Ludum Dare 42",
         "slug": "dont-mess-up-ludum-dare-42",
         "content": "<p>Game created in 48 hours for Ludumdare 42, Theme: Running out of space, Ranking: 60th/2500+!</p>\n",
-        "acf": {
+        "workAcf": {
           "date": "2018-08-31T00:00:00+00:00",
           "label": "LDJAM",
           "label2": "PLAY",

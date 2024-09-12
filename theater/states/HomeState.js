@@ -33,7 +33,7 @@ class HomeState extends State {
             positions.setXYZ(i, vertex.x, vertex.y, combinedNoiseValue);
         }
         positions.needsUpdate = true;
-        this.rotationZ = this.theater.mouseposition.x * Math.PI / 4;
+        this.rotationZ = this.theater.mouseManager.position.x * Math.PI / 4;
         this.plane.rotation.z = lerp(this.plane.rotation.z, this.rotationZ, 0.1);
     }
     leave() {
