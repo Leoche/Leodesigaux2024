@@ -1,232 +1,302 @@
 <template>
-    <div class="rootPage">
-        <div class="sur-theater h-full w-full -mt-12 md:-mt-24 relative">
-            <div class="container mx-auto h-screen">
-                <div class="w-5/6 h-full flex flex-col justify-center">
-                    <h2 ref="lettering_job">Hi, I'm Léo DESIGAUX, a fullStack</h2>
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 107.6 12.8" id="webdev_logo" xml:space="preserve" style="enable-background:new 0 0 107.6 9.9">
-                        <g>
-                            <path d="M14.4,0.7l-2.7,8.4h-3L7.3,4.6L5.9,9.1h-3L0.2,0.7h2.9l1.5,4.8l1.5-4.8h2.6l1.5,4.8l1.5-4.8H14.4z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="61.38768768310547"></path>
-                            <path d="M21.9,6.9v2.1h-7V0.7h6.8v2.1h-4v1h3.6v2h-3.6v1.1H21.9z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="45.79999542236328"></path>
-                            <path d="M30.6,5.5C30.8,5.8,31,6.3,31,6.8c0,0.7-0.3,1.3-0.9,1.7s-1.5,0.6-2.6,0.6h-4.7V0.7h4.5c1.1,0,2,0.2,2.5,0.6
-            c0.6,0.4,0.9,0.9,0.9,1.6c0,0.4-0.1,0.7-0.3,1.1c-0.2,0.3-0.5,0.6-0.9,0.8C29.9,4.9,30.3,5.1,30.6,5.5z M25.5,2.7v1.2h1.3
-            c0.6,0,0.9-0.2,0.9-0.6s-0.3-0.6-0.9-0.6H25.5z M28.1,6.4c0-0.4-0.3-0.7-0.9-0.7h-1.7v1.3h1.7C27.8,7.1,28.1,6.9,28.1,6.4z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="45.459442138671875"></path>
-                            <path d="M31.7,0.7h4.1c0.9,0,1.8,0.2,2.5,0.5C39,1.5,39.5,2,39.9,2.7c0.4,0.6,0.6,1.4,0.6,2.2c0,0.9-0.2,1.6-0.6,2.2
-            c-0.4,0.6-1,1.1-1.7,1.5c-0.7,0.3-1.5,0.5-2.5,0.5h-4.1V0.7z M35.7,6.9c0.6,0,1.1-0.2,1.5-0.5c0.4-0.3,0.5-0.8,0.5-1.5
-            c0-0.6-0.2-1.1-0.5-1.5c-0.4-0.3-0.9-0.5-1.5-0.5h-1.2v4H35.7z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="43.854923248291016"></path>
-                            <path d="M48.3,6.9v2.1h-7V0.7h6.8v2.1h-4v1h3.6v2h-3.6v1.1H48.3z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="45.79999923706055"></path>
-                            <path d="M58,0.7l-3.6,8.4h-2.8l-3.6-8.4h3l2,4.9l2.1-4.9H58z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="37.60133743286133"></path>
-                            <path d="M65.2,6.9v2.1h-7V0.7H65v2.1h-4v1h3.6v2H61v1.1H65.2z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="45.79999542236328"></path>
-                            <path d="M66,0.7h2.8v6.2h3.8v2.2H66V0.7z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="30.000011444091797"></path>
-                            <path d="M75,8.7c-0.7-0.4-1.3-0.9-1.7-1.6s-0.6-1.4-0.6-2.3c0-0.8,0.2-1.6,0.6-2.3s1-1.2,1.7-1.6
-            c0.7-0.4,1.5-0.6,2.4-0.6s1.7,0.2,2.4,0.6c0.7,0.4,1.3,0.9,1.7,1.6C82,3.3,82.2,4,82.2,4.9c0,0.8-0.2,1.6-0.6,2.3
-            c-0.4,0.7-1,1.2-1.7,1.6c-0.7,0.4-1.5,0.6-2.4,0.6S75.7,9.1,75,8.7z M78.4,6.7c0.3-0.2,0.5-0.4,0.7-0.7c0.2-0.3,0.3-0.7,0.3-1.1
-            c0-0.4-0.1-0.8-0.3-1.1c-0.2-0.3-0.4-0.6-0.7-0.7c-0.3-0.2-0.6-0.3-1-0.3s-0.7,0.1-1,0.3c-0.3,0.2-0.5,0.4-0.7,0.7
-            c-0.2,0.3-0.3,0.7-0.3,1.1c0,0.4,0.1,0.8,0.3,1.1s0.4,0.6,0.7,0.7c0.3,0.2,0.6,0.3,1,0.3S78.1,6.9,78.4,6.7z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="42.216583251953125"></path>
-                            <path d="M89,1.1c0.6,0.3,1,0.6,1.3,1.1s0.5,1,0.5,1.7s-0.2,1.2-0.5,1.7C90,6,89.6,6.4,89,6.6C88.4,6.9,87.8,7,87,7
-            h-1.2v2.1h-2.8V0.7h4C87.8,0.7,88.4,0.8,89,1.1z M87.7,4.6C87.9,4.4,88,4.2,88,3.9s-0.1-0.6-0.3-0.7c-0.2-0.2-0.5-0.3-0.9-0.3h-1v2
-            h1C87.2,4.8,87.5,4.8,87.7,4.6z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="37.12616729736328"></path>
-                            <path d="M98.5,6.9v2.1h-7V0.7h6.8v2.1h-4v1h3.6v2h-3.6v1.1H98.5z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="45.79999542236328"></path>
-                            <path d="M102.9,7h-0.8v2.1h-2.8V0.7h4c0.8,0,1.5,0.1,2,0.4c0.6,0.3,1,0.6,1.3,1.1s0.5,1,0.5,1.7c0,0.6-0.1,1.1-0.4,1.6
-            c-0.3,0.4-0.7,0.8-1.2,1.1l1.8,2.6h-3L102.9,7z M104.1,3.1c-0.2-0.2-0.5-0.3-0.9-0.3h-1v2h1c0.4,0,0.7-0.1,0.9-0.3s0.3-0.4,0.3-0.7
-            S104.2,3.3,104.1,3.1z" class="st0" style="stroke: rgba(255, 255, 255, 0); stroke-dashoffset: 0px; fill: rgb(255, 255, 255);" stroke-dasharray="43.27360534667969"></path>
-                        </g>
-                    </svg>
-                </div>
+  <div class="rootPage">
+    <div id="sur-theater" class="h-[85vh] w-full -mt-12 md:-mt-24 relative">
+      <div class="container mx-auto h-screen overflow-clip">
+        <div class="h-full flex flex-col justify-center">
+          <h1 ref="lettering_job" class="lettering_job" aria-label="Hi, I'm Léo DESIGAUX, a fullStack Webdevelopper">
+            <div class="subtitle overflow-hidden max-h-[43px] flex">
+              <span v-for="(letter, index) in $t('Hi, I\'m ').split('')" :key="'0' + letter + index" class="relative text-ld-400 text-5xl/[1]">{{ letter == " " ? "&nbsp;" : letter }}</span>
+              <span v-for="(letter, index) in 'Léo DESIGAUX'.split('')" :key="'1' + letter + index" class="relative text-ld-300 text-5xl/[1] font-bold text-shadowed">{{ letter == " " ? "&nbsp;" : letter }}</span>
+              <span v-for="(letter, index) in $t(', a fullStack').split('')" :key="'2' + letter + index" class="relative text-ld-400 text-5xl/[1]">{{ letter == " " ? "&nbsp;" : letter }}</span>
             </div>
-        </div>
-        <div class="relative pt-24 bg-[#0a0919e0] backdrop-blur clip-pathed">
-            <div class="container mx-auto flex flex-col gap-2 py-16 pt-32">
-                <h3 class="mb-8">What’s in my tool belt ?</h3>
-                    <div class="marquee">
-                        <ul class="marquee__content">
-                            <li><img src="/img/logos/vuejs.svg" alt=""></li>
-                            <li><img src="/img/logos/webgl.svg" alt=""></li>
-                            <li><img src="/img/logos/symfony.svg" alt=""></li>
-                            <li><img src="/img/logos/vuejs.svg" alt=""></li>
-                            <li><img src="/img/logos/webgl.svg" alt=""></li>
-                            <li><img src="/img/logos/symfony.svg" alt=""></li>
-                        </ul>
-
-                        <ul aria-hidden="true" class="marquee__content">
-                            <li><img src="/img/logos/vuejs.svg" alt=""></li>
-                            <li><img src="/img/logos/webgl.svg" alt=""></li>
-                            <li><img src="/img/logos/symfony.svg" alt=""></li>
-                            <li><img src="/img/logos/vuejs.svg" alt=""></li>
-                            <li><img src="/img/logos/webgl.svg" alt=""></li>
-                            <li><img src="/img/logos/symfony.svg" alt=""></li>
-                        </ul>
-                    </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto, quibusdam fugiat sunt ea molestiae porro. Placeat ducimus, odio minima commodi consequuntur nihil similique provident qui iure reiciendis fugiat odit?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto, quibusdam fugiat sunt ea molestiae porro. Placeat ducimus, odio minima commodi consequuntur nihil similique provident qui iure reiciendis fugiat odit?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto, quibusdam fugiat sunt ea molestiae porro. Placeat ducimus, odio minima commodi consequuntur nihil similique provident qui iure reiciendis fugiat odit?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur architecto, quibusdam fugiat sunt ea molestiae porro. Placeat ducimus, odio minima commodi consequuntur nihil similique provident qui iure reiciendis fugiat odit?</p>
+            <div class="h1-heading pr-4 text-9xl max-h-[145px] flex relative text-transparent overflow-hidden bold text-center tracking-tighter bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] [background-position:105%_75%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold h1-heading">
+              <span v-for="(letter, index) in $t('Webdevelopper').split('')" :key="'3' + letter + index" class="font-extrabold tracking-tighter uppercase text-[145px]">{{ letter }}</span>
             </div>
+          </h1>
         </div>
+      </div>
     </div>
+    <div id="toolbelt" class="relative pt-32 bg-[#000000bd] backdrop-blur clip-pathed lined-content overflow-clip">
+      <div class="container mx-auto flex flex-col gap-2 py-16 pt-40 max-w-6xl">
+        <div class="grid grid-cols-2">
+          <div class="flex flex-col justify-center gap-8">
+            <div class="origin-left line bg-ld-200 h-1 w-24 rounded-full shadow-[0_16px_32px_#c19fdb,0_32px_48px_#c19fdb,0_1px_5px_#c19fdb]"></div>
+            <h2 class="title text-7xl/[1.1] bg-[radial-gradient(white,#8b75b2_50%)] bg-clip-text [background-position:140%_70%] bg-[length:200%_400%] text-transparent font-bold">What’s in my <br /> tool belt ?</h2>
+            <p class="subtitle text-2xl text-ld-500">The tools i work with</p>
+          </div>
+          <div class="flex flex-col gap-4 py-16 -ml-16">
+            <div class="logos-container inline-flex ml-32 flex-col p-6 gap-4 rounded-xl bg-gradient-to-r from-ld-500/20 mr-auto">
+              <h4 class="text-ld-300/80">FRAMEWORKS</h4>
+              <div class="flex gap-8 items-center">
+                <img class="w-auto h-12 object-contain" :src="'/img/logos/symfony.svg'" alt="">
+                <img class="w-auto h-8 object-contain" :src="'/img/logos/laravel.png'" alt="">
+              </div>
+            </div>
+            <div class="logos-container inline-flex ml-16 flex-col p-6 gap-4 rounded-xl bg-gradient-to-r from-ld-500/20 mr-auto">
+              <h4 class="text-ld-300/80">FRONT-END</h4>
+              <div class="flex gap-8 items-center">
+                <img class="w-auto h-6 object-contain" :src="'/img/logos/tailwindcss.svg'" alt="">
+                <img class="w-auto h-12 object-contain" :src="'/img/logos/vuejs.svg'" alt="">
+                <img class="w-auto h-12 object-contain" :src="'/img/logos/gsap.svg'" alt="">
+                <img class="w-auto h-12 object-contain" :src="'/img/logos/webgl.svg'" alt="">
+              </div>
+            </div>
+            <div class="logos-container inline-flex flex-col p-6 gap-4 rounded-xl bg-gradient-to-r from-ld-500/20 mr-auto">
+              <h4 class="text-ld-300/80">E-COMMERCE & CMS</h4>
+              <div class="flex gap-8 items-center">
+                <img class="w-auto h-4 object-contain" :src="'/img/logos/prestashop.png'" alt="">
+                <img class="w-auto h-14 object-contain" :src="'/img/logos/wordpress.png'" alt="">
+                <img class="w-auto h-8 object-contain" :src="'/img/logos/magento.png'" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </template>
 <script setup>
 import { gsap } from 'gsap';
-import { ref, onMounted } from 'vue';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n({ useScope: "global" });
 
 const lettering_job = ref();
 const route = useRoute();
 let isRevisited = false;
 
+const changeLocale = () => {
+  head.value = {
+    title: 'Léo DESIGAUX, ' + t('Webdevelopper')
+  }
+};
+const head = ref({});
+useHead(head);
+watch(locale, changeLocale, { immediate: true });
+
 // Check if session is already set
 if (localStorage.getItem("ldinit")) {
   isRevisited = true;
 } else {
-  // Set a new session identifier
   localStorage.setItem("ldinit", Math.random().toString(36).substring(2));
 }
-
 definePageMeta({
   pageTransition: {
     name: localStorage.getItem("ldinit") ? 'page-out' : 'page',
     mode: 'out-in',
   },
-  //layoutTransition: false
 });
 
 onMounted(() => {
+  changeLocale();
   if (route.name === 'index') {
-    let splitted = lettering_job.value.innerText.split('');
-    lettering_job.value.innerText = "";
-    for (var i in splitted) {
-      let letter = splitted[i];
-      lettering_job.value.setAttribute("aria-label", splitted.join());
-      let color = "rgba(197, 206, 255, .6)";
-      let margin = "0px";
-      if (i != 0 && splitted[i - 1] == " ") {
-        margin = "8px";
+    let animStarted = false;
+    const tlName = gsap.timeline({ defaults: { ease: "expo.out" } });
+    const tlTitle = gsap.timeline({
+      defaults: { stagger: 0.05, ease: "expo.out" }, onUpdate: () => {
+        if (tlTitle.progress() > 0.5 && !animStarted) {
+          animStarted = true;
+          tlName.play();
+        }
       }
-      if (i > 6 && i < 20) {
-        color = "rgba(255, 255, 255, 1)";
-      }
-      if (i > 10 && i < 20) {
-        color = "rgba(255, 255, 255, 1);font-weight: bold;";
-      }
-      lettering_job.value.innerHTML += "<span aria-hidden='true' style='margin-left: " + margin + ";position: relative;color:" + color + ";display: inline-block;pointer-events:none;'>" + letter + "</span>";
-    }
+    });
+    const animationDuration = isRevisited ? 0 : 0.6;
+    const logoAnimationDuration = isRevisited ? 0 : 0.6;
 
-    const tlTitle = gsap.timeline({ defaults: { stagger: 0.1, ease: "back.out" } });
-    const animationDuration = isRevisited ? 0 : 0.4;
-    const logoAnimationDuration = isRevisited ? 0 : 0.5;
-    const strokeAnimationDuration = isRevisited ? 0 : 2;
-    const fillAnimationDuration = isRevisited ? 0 : 1.5;
-
-    tlTitle.fromTo("h2 span", {
-      y: 20,
-      opacity: 0,
+    tlTitle.fromTo("#sur-theater .subtitle span", {
+      lineHeight: 3.5,
     }, {
-      y: 0,
-      opacity: 1,
+      lineHeight: 1,
       duration: animationDuration,
       delay: .8,
       stagger: function (index, target, list) {
-        let stag = index * 0.05;
+        let stag = index * 0.03;
         if (index > 1) {
-          stag += 1;
+          stag += .5;
         }
         if (index > 19) {
-          stag += 1;
+          stag += .5;
         }
         return stag;
       }
     }, "<")
-
-    tlTitle.fromTo("#webdev_logo path", {
-      y: -15,
-      stroke: "rgba(255, 255, 255, 0.5)",
+    tlTitle.fromTo("#sur-theater .h1-heading span", {
+      lineHeight: 3,
     }, {
-      y: 0,
+      lineHeight: 1,
+      duration: 0.5,
       duration: logoAnimationDuration,
-      delay: 1
+      stagger: 0.05,
+      delay: 0.4
     }, "-=90%")
-    tlTitle.fromTo("#webdev_logo path", {
-      strokeDashoffset: (i, item) => {
-        return item.getTotalLength();
-      },
-    }, {
-      strokeDashoffset: 0,
-      duration: strokeAnimationDuration,
-      ease: "none",
-    }, "-=90%")
-
-    tlTitle.fromTo("#webdev_logo path", {
-      stroke: "rgba(255, 255, 255, 0.5)",
-      fill: "rgba(182, 131, 255, 0)",
-    }, {
-      stroke: "rgba(255, 255, 255, 0)",
-      fill: "rgba(255, 255, 255, 1)",
-      duration: fillAnimationDuration,
-      delay: .2,
-    }, "-=50%");
     tlTitle.play();
 
+    tlName.fromTo("#sur-theater .text-shadowed", {
+      y: 0,
+    }, {
+      y: -20,
+      ease: "power4.out",
+      duration: .5,
+      stagger: {
+        from: 6,
+        amount: .1
+      },
+      onStart: function () {
+        document.querySelector(".subtitle").classList.remove("overflow-hidden");
+        document.querySelector(".h1-heading").classList.remove("overflow-hidden");
+      }
+    }, 1.6)
+    let animchildStarted = false;
+    tlName.to("#sur-theater .text-shadowed", {
+      y: 0,
+      ease: "back.out(8)",
+      stagger: {
+        from: 6,
+        amount: .1
+      },
+      duration: .3,
+      onUpdate: function (self) {
+        if (this.progress() > 0.1 && !animchildStarted) {
+          animchildStarted = true;
+          gsap.to(".text-shadowed", {
+            color: "#f1f0f7",
+            textShadow: "0 0 1rem #ffffff44",
+            ease: "back.out(1.2)",
+            duration: .1,
+          });
+          var color = { value: "rgb(163, 166, 216)" };
+          gsap.to(color, {
+            value: "#f1f0f7",
+            ease: "back.out(1.2)",
+            duration: .1,
+            onUpdate: function () {
+              document.querySelector(".h1-heading").style.backgroundImage = "radial-gradient(" + color.value + " 10%, rgb(102, 108, 189) 40%, rgb(193 159 219) 60%, rgba(255, 255, 255, 0) 100%)";
+            }
+          });
+          gsap.to(".h1-heading span", {
+            lineHeight: 1.2,
+            stagger: {
+              from: 2,
+              amount: .2
+            },
+            ease: "circ.out",
+            duration: .4,
+          });
+          gsap.to(".h1-heading span", {
+            lineHeight: 1,
+            stagger: {
+              from: 2,
+              amount: .2
+            },
+            ease: "circ.in",
+            duration: .8,
+            delay: .4
+          });
+        }
+      }
+    }, ">")
+    tlName.pause();
+
     isRevisited = true;
+    gsap.registerPlugin(ScrollTrigger);
+    let tlToolbelt = gsap.timeline({
+      defaults: {
+        ease: "circ.out"
+      },
+      scrollTrigger: {
+        scrub:1,
+        trigger: '#toolbelt',
+        start: '-=500px top', // when the top of the trigger hits the top of the viewport
+        end: '+=90%', // end after scrolling 500px beyond the start
+        markers: { fontSize: "18px", fontWeight: "bold", indent: 20 }
+      }
+    });
+    tlToolbelt.fromTo("#toolbelt .logos-container", {
+      opacity: 0,
+      x: 128,
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 0.4,
+      stagger: 0.1,
+    }, .1);
+    tlToolbelt.fromTo("#toolbelt .title", {
+      opacity:0,
+    }, {
+      opacity:1,
+      duration: 0.4,
+    }, "<");
+    tlToolbelt.fromTo("#toolbelt .subtitle", {
+      opacity:0,
+      y: -32,
+    }, {
+      opacity:1,
+      y: 0,
+      duration: 0.4,
+    }, .3);
+
+    tlToolbelt.fromTo("#toolbelt .line", {
+      width: 0,
+    }, {
+      width: 128,
+      duration: 0.4,
+    }, .2);
+    tlToolbelt.fromTo("#toolbelt .title", {
+      backgroundPositionX: "150%",
+    }, {
+      backgroundPositionX: "90%",
+      duration: 0.4,
+    }, .2);
+    
   }
 });
 </script>
 <style scoped>
 #webdev_logo path {
-    stroke-width: 0.1px;
+  stroke-width: 0.1px;
 }
 
 .clip-pathed {
-    clip-path: polygon(100% 100%, 0% 100%, 0.00% 5.24%, 6.67% 8.31%, 13.33% 11.68%, 20.00% 14.87%, 26.67% 17.43%, 33.33% 19.01%, 40.00% 19.37%, 46.67% 18.48%, 53.33% 16.45%, 60.00% 13.57%, 66.67% 10.24%, 73.33% 6.94%, 80.00% 4.13%, 86.67% 2.19%, 93.33% 1.41%, 100.00% 1.89%);
-}
-
-h2 {
-    font-size: 40px;
-    margin-bottom: 8px;
-}
-
-h3 {
-    color: transparent;
-    font-size: 40px;
-    width: 100%;
-    text-align: center;
-    background: linear-gradient(to right, #2c2c36 0, #555574 15%, #fff 50%, #555574 85%, #2c2c36 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
+  clip-path: polygon(100% 100%, 0% 100%, 0.00% 5.24%, 6.67% 8.31%, 13.33% 11.68%, 20.00% 14.87%, 26.67% 17.43%, 33.33% 19.01%, 40.00% 19.37%, 46.67% 18.48%, 53.33% 16.45%, 60.00% 13.57%, 66.67% 10.24%, 73.33% 6.94%, 80.00% 4.13%, 86.67% 2.19%, 93.33% 1.41%, 100.00% 1.89%);
 }
 
 .marquee {
-    --gap: 0.2rem;
-    display: flex;
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 100%) 10%, rgb(0 0 0 / 100%) 90%, transparent 100%);
-    user-select: none;
-    padding: 16px;
-    gap: var(--gap);
+  --gap: 0.4rem;
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 100%) 10%, rgb(0 0 0 / 100%) 90%, transparent 100%);
+  user-select: none;
+  padding: 16px;
 }
 
 .marquee__content {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    gap: var(--gap);
-    min-width: 100%;
-    animation: scroll 20s linear infinite;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll 20s linear infinite;
 }
 
 .marquee__content img {
-    object-fit: contain;
-    object-position: center;
-    width: 200px;
-    height: 50px;
+  object-fit: contain;
+  object-position: center;
+  width: 200px;
+  height: 50px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(0);
+  }
 
-    to {
-        transform: translateX(calc(-100% - var(--gap)));
-    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 </style>

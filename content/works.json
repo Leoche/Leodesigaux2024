@@ -2,6 +2,348 @@
   "works": {
     "nodes": [
       {
+        "workId": 244,
+        "title": "PinkHat",
+        "slug": "pinkhat",
+        "content": "<p>Boss battle game created in collaboration with musician Bromes.</p>\n",
+        "workAcf": {
+          "date": "2023-09-13T00:00:00+00:00",
+          "label": "PLAY",
+          "label2": "DOWNLOAD",
+          "link": "https://dev.leodesigaux.com/demos/bosses/",
+          "link2": "https://dev.leodesigaux.com/demos/bosses/bosses.exe",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/pinkhat.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Godot",
+                  "slug": "godot"
+                }
+              }
+            ]
+          },
+          "category": "Games",
+          "type": "Perso"
+        },
+        "translations": [
+          {
+            "title": "PinkHat",
+            "content": "<p>Jeu de combat de boss crée en collaboration avec le musicien Bromes.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 241,
+        "title": "Altais",
+        "slug": "altais",
+        "content": "<p>Redesign of the Altais website using WordPress. Done in agency.</p>\n",
+        "workAcf": {
+          "date": "2020-09-10T00:00:00+00:00",
+          "label": "VISIT",
+          "label2": null,
+          "link": "https://www.altais.fr/",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/altais.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Wordpress",
+                  "slug": "wordpress"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "Altais",
+            "content": "<p>Refonte du site web d'Altais en utilisant WordPress. Réalisé en agence.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 238,
+        "title": "LD Modules",
+        "slug": "ld-modules",
+        "content": "<p>Creation of the LD Modules website using Symfony. This is the place where i sell my Prestashop and WordPress Modules.</p>\n",
+        "workAcf": {
+          "date": "2024-09-18T00:00:00+00:00",
+          "label": "VISIT",
+          "label2": null,
+          "link": "https://ldmodules.com/",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/ldmodules.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Symfony",
+                  "slug": "symfony"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "LD Modules",
+            "content": "<p>Création du site web des modules LD en utilisant Symfony. C'est l'endroit où je vends mes modules Prestashop et WordPress.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 236,
+        "title": "Fédération du BTP FFB45",
+        "slug": "federation-du-btp-ffb45",
+        "content": "<p>Redesign of the Fédération du BTP FFB45 website using Symfony. Done in agency.</p>\n",
+        "workAcf": {
+          "date": "2023-09-13T00:00:00+00:00",
+          "label": "VISIT",
+          "label2": null,
+          "link": "https://btp45.fr/",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/ffb.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Symfony",
+                  "slug": "symfony"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Fullstack",
+                  "slug": "fullstack"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "Fédération du BTP FFB45",
+            "content": "<p>Refonte du site web de la Fédération du BTP FFB45 en utilisant Symfony. Réalisé en agence.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 234,
+        "title": "Louis Tellier",
+        "slug": "louistellier-fr",
+        "content": "<p>Creation of the Louistellier.fr e-shop using Magento2. Done in agency.</p>\n",
+        "workAcf": {
+          "date": "2022-05-05T00:00:00+00:00",
+          "label": "SEEMORE",
+          "label2": "VISIT",
+          "link": "https://www.altaisweb.fr/projets/louis-tellier/",
+          "link2": "https://louistellier.fr/",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/lt.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Magento",
+                  "slug": "magento"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "Louis Tellier",
+            "content": "<p>Création de la boutique en ligne Louistellier.fr en utilisant Magento2. Réalisé en agence.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 232,
+        "title": "Delta7",
+        "slug": "delta7",
+        "content": "<p>Remake of the Delta7 website and their tools using Symfony.</p>\n",
+        "workAcf": {
+          "date": "2024-09-10T00:00:00+00:00",
+          "label": "VISIT",
+          "label2": null,
+          "link": "https://delta7.org/",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/delta7.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Fullstack",
+                  "slug": "fullstack"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Symfony",
+                  "slug": "symfony"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "Delta7",
+            "content": "<p>Refonte du site Delta7 sous Symfony et de leur outils.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 230,
+        "title": "Crédit mutuel",
+        "slug": "credit-mutuel-objectif-jeunes",
+        "content": "<p>Creation of the website objectif-jeunes.fr for Crédit Mutuel. Done in agency.</p>\n",
+        "workAcf": {
+          "date": "2022-09-08T00:00:00+00:00",
+          "label": "SEEMORE",
+          "label2": "VISIT",
+          "link": "https://www.altaisweb.fr/projets/credit-mutuel-objectif-jeunes/",
+          "link2": "https://www.objectif-jeunes.fr/",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/cm-2.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Fullstack",
+                  "slug": "fullstack"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "Crédit mutuel",
+            "content": "<p>Création du site objectif-jeunes.fr pour le Crédit Mutuel. Fait en agence.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 228,
+        "title": "Zéfal",
+        "slug": "zefal-com",
+        "content": "<p>Creation of the Zefal.com e-shop using Prestashop. Done in agency.</p>\n",
+        "workAcf": {
+          "date": "2022-09-16T00:00:00+00:00",
+          "label": "SEEMORE",
+          "label2": "VISIT",
+          "link": "https://www.altaisweb.fr/projets/zefal/",
+          "link2": "https://www.zefal.com/fr/",
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/zefal.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Fullstack",
+                  "slug": "fullstack"
+                }
+              },
+              {
+                "tag": {
+                  "name": "Prestashop",
+                  "slug": "prestashop"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "Zéfal",
+            "content": "<p>Création de l'e-commerce Zefal.com sous Prestashop. Fait en agence.</p>\n"
+          }
+        ]
+      },
+      {
+        "workId": 216,
+        "title": "Altais Web",
+        "slug": "altaisweb",
+        "content": "<p>Redesign of the Altaisweb website using WordPress. Done at Altaisweb agency.</p>\n",
+        "workAcf": {
+          "date": "2020-09-02T00:00:00+00:00",
+          "label": "VISIT",
+          "label2": null,
+          "link": "https://www.altaisweb.fr/",
+          "link2": null,
+          "previewUrl": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/altaisweb.png"
+            }
+          },
+          "tags": {
+            "tagList": [
+              {
+                "tag": {
+                  "name": "Fullstack",
+                  "slug": "fullstack"
+                }
+              }
+            ]
+          },
+          "category": "Web",
+          "type": "Pro"
+        },
+        "translations": [
+          {
+            "title": "Altais Web",
+            "content": "<p>Refonte du site Altaisweb sous WordPress. Fait dans l\\'agence Altaisweb.</p>\n"
+          }
+        ]
+      },
+      {
         "workId": 62,
         "title": "Optimalog",
         "slug": "optimalog",
@@ -253,7 +595,7 @@
         "slug": "jgraphics",
         "content": "<p>A customizable jQuery plugin for integrating small charts on your website.</p>\n",
         "workAcf": {
-          "date": null,
+          "date": "2018-09-14T00:00:00+00:00",
           "label": "GITHUB",
           "label2": null,
           "link": "https://github.com/Leoche/jGraphics",

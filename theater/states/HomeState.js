@@ -10,6 +10,9 @@ class HomeState extends State {
         this.theater = theater;
         this.noise2D = createNoise2D();
         this.rotationZ = 0;
+        this.title = document.querySelector('.lettering_job');
+        this.titleY = 0;
+        this.planeY = 0;
     }
     enter() {
         const meshDetails = 2
@@ -34,7 +37,12 @@ class HomeState extends State {
         }
         positions.needsUpdate = true;
         this.rotationZ = this.theater.mouseManager.position.x * Math.PI / 4;
-        this.plane.rotation.z = lerp(this.plane.rotation.z, this.rotationZ, 0.1);
+        this.plane.rotation.z = lerp(this.plane.rotation.z, this.rotationZ, 0.02);
+        const scrollTop = document.documentElement.scrollTop;
+        this.titleY = lerp(this.titleY, scrollTop * -0.4, 0.05);
+        this.planeY = lerp(this.planeY, scrollTop * 0.05, 0.05);
+        this.title.style.transform = "translateY(" + (this.titleY) + "px)";
+        this.plane.position.y = this.planeY;
     }
     leave() {
         this.theater.scene.remove(this.plane);

@@ -2,6 +2,7 @@ import { HomeState } from './HomeState.js';
 import { WorkState } from './WorkState.js';
 import { BlogState } from './BlogState.js';
 import { AboutState } from './AboutState.js';
+import { LabsState } from './LabsState.js';
 import { gsap } from 'gsap';
 
 class StateManager {
@@ -11,6 +12,7 @@ class StateManager {
             "home": new HomeState(this.theater),
             "works": new WorkState(this.theater),
             "blog": new BlogState(this.theater),
+            "labs": new LabsState(this.theater),
             "about": new AboutState(this.theater),
         };
         let cleanest = window.location.pathname.split("/");
@@ -57,7 +59,7 @@ class StateManager {
         let delay = 0.5;
         let duration = 1;
         if(state == "home"){
-            delay = 4;
+            delay = 3;
             duration = 4;
         }
         this.activeState = state;

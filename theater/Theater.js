@@ -12,7 +12,7 @@ import { asciiShader } from './utils/asciiShader.js';
 import { StateManager } from './states/StateManager.js';
 import { gsap } from 'gsap';
 import { MouseManager } from './MouseManager.js';
-
+import Stats from 'stats.js'
 class Theater {
 
     constructor() {
@@ -26,7 +26,13 @@ class Theater {
         this.stateManager = new StateManager(this);
         this.time = 0;
         this.debug = false;
+        this.debugFps = true;
         this.asciiShader = asciiShader;
+        if(this.debugFps) {
+            this.stats = new Stats()
+            this.stats.showPanel(0)
+            document.body.appendChild(this.stats.dom)
+        }
         this.materialParams = {
             flatShading: true,
             color: 0x7800ff,
@@ -151,6 +157,9 @@ class Theater {
         this.onWindowResize();
     }
     animate() {
+        if(this.debugFps) {
+            this.stats.begin()
+        }
         requestAnimationFrame(() => this.animate());
         this.settings.timeScaleRatioBase = lerp(this.settings.timeScaleRatioBase, this.settings.timeScaleRatioOpening + this.settings.timeScaleRatio / 2, 0.1);
         this.time += this.clock.getDelta() * this.settings.timeScale + this.settings.timeScaleRatioBase;
@@ -168,6 +177,9 @@ class Theater {
             this.settings.timeScaleRatioOpening = 0;
         }
         this.mouseManager.animate(this.time);
+        if(this.debugFps) {
+            this.stats.end()
+        }
     }
 }
 

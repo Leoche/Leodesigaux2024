@@ -1,6 +1,7 @@
 query allLabs {
   experiments(
     where: {status: PUBLISH, orderby: {field: DATE, order: DESC}, language: EN}
+    first: 100
   ) {
     nodes {
       content(format: RENDERED)
@@ -24,6 +25,11 @@ query allLabs {
           }
         }
         preview {
+          node {
+            mediaItemUrl
+          }
+        }
+        previewmp4 {
           node {
             mediaItemUrl
           }

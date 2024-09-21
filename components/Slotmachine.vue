@@ -3,14 +3,14 @@
         <div class="inline-flex justify-center" ref="title1Container" :aria-label="title1">
             <span v-for="(letter, index) in title1.split('')" v-bind:key="letter+index">{{ letter }}</span>
         </div>
-        <div class="inline-flex justify-center" ref="title2Container" :aria-label="title2">
+        <div class="inline-flex justify-center" ref="title2Container" :aria-label="title2" :class="title2Class">
             <span v-for="(letter, index) in title2.split('')" v-bind:key="letter+index">{{ letter }}</span>
         </div>
     </div>
 </template>
 <script setup>
 import gsap from 'gsap'
-defineProps(['title1', 'title2'])
+defineProps(['title1', 'title2', 'title2Class'])
 const title1Container = ref(null)
 const title2Container = ref(null)
 const toggle = (active) => {

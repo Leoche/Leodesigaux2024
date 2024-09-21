@@ -1,6 +1,7 @@
 query allPosts {
   posts(
     where: {status: PUBLISH, orderby: {field: DATE, order: DESC}, language: EN}
+    first: 100
   ) {
     nodes {
       title

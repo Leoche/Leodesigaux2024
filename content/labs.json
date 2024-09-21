@@ -2,6 +2,706 @@
   "experiments": {
     "nodes": [
       {
+        "content": "<p>Shadows in CSS</p>\n",
+        "slug": "shadows-in-css",
+        "title": "Shadows in CSS",
+        "translations": [
+          {
+            "content": "<p>Shadows in CSS</p>\n",
+            "title": "Shadows in CSS"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2018",
+          "iframe": "https://dev.leodesigaux.com/demos/shadows/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/shadows_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/shadows.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/shadows.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Bouncy letters</p>\n",
+        "slug": "bouncy-letters",
+        "title": "Bouncy letters",
+        "translations": [
+          {
+            "content": "<p>Bouncy letters</p>\n",
+            "title": "Bouncy letters"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2018",
+          "iframe": "https://dev.leodesigaux.com/demos/bouncing-letters/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bouncing-letters_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bouncing-letters.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bouncing-letters.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Dots eyes</p>\n",
+        "slug": "dots-eyes",
+        "title": "Dots eyes",
+        "translations": [
+          {
+            "content": "<p>Dots eyes</p>\n",
+            "title": "Dots eyes"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2018",
+          "iframe": "https://dev.leodesigaux.com/demos/dots/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/dots_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/dots.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/dots.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Tricolor loader</p>\n",
+        "slug": "tricolor-loader",
+        "title": "Tricolor loader",
+        "translations": [
+          {
+            "content": "<p>Tricolor loader</p>\n",
+            "title": "Tricolor loader"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2019",
+          "iframe": "https://dev.leodesigaux.com/demos/tricolor-loader/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/tricolor-loader_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/tricolor-loader.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/tricolor-loader.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>A nice Color picker for a professionnal project. </p>\n",
+        "slug": "color-picker",
+        "title": "Color picker",
+        "translations": [
+          {
+            "content": "<p>Un sélecteur de couleurs pour un projet professionnel.</p>\n",
+            "title": "Color Picker"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2022",
+          "iframe": "https://dev.leodesigaux.com/demos/color-picker/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/colorpicker_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/colorpicker.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/colorpicker.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Bouncing ball</p>\n",
+        "slug": "bouncing-ball",
+        "title": "Bouncing ball",
+        "translations": [
+          {
+            "content": "<p>Bouncing ball</p>\n",
+            "title": "Bouncing ball"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2019",
+          "iframe": "https://dev.leodesigaux.com/demos/bouncing-ball-animejs/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bouncingball_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bouncingball.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bouncingball.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Glass Threejs distortion</p>\n",
+        "slug": "glass-threejs-distortion",
+        "title": "Glass Threejs distortion",
+        "translations": [
+          {
+            "content": "<p>Glass Threejs distortion</p>\n",
+            "title": "Glass Threejs distortion"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2024",
+          "iframe": "https://dev.leodesigaux.com/demos/bromes/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bromes_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bromes.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/bromes.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Scifi canvas circle</p>\n",
+        "slug": "scifi-canvas-circle",
+        "title": "Scifi canvas circle",
+        "translations": [
+          {
+            "content": "<p>Scifi canvas circle</p>\n",
+            "title": "Scifi canvas circle"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2019",
+          "iframe": "https://dev.leodesigaux.com/demos/svg-circular-maze-generator/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/scifi_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/scifi.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/scifi.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Colorful Text, random sass animations</p>\n",
+        "slug": "colorful-text-random-sass-animations",
+        "title": "Colorful Text, random sass animations",
+        "translations": [
+          {
+            "content": "<p>Colorful Text, random sass animations</p>\n",
+            "title": "Colorful Text, random sass animations"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2019",
+          "iframe": "https://leodesigaux.com/demos/colorful-text/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/graphic-design_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/graphic-design.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/graphic-design.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Chrome cubes hero</p>\n",
+        "slug": "chrome-cubes-hero",
+        "title": "Chrome cubes hero",
+        "translations": [
+          {
+            "content": "<p>Chrome cubes hero</p>\n",
+            "title": "Chrome cubes hero"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2024",
+          "iframe": "https://dev.leodesigaux.com/demos/chrome-cubes-hero/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/chrome-cubes-hero_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/chrome-cubes-hero.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/chrome-cubes-hero.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Random select background color</p>\n",
+        "slug": "random-select-background-color",
+        "title": "Random select background color",
+        "translations": [
+          {
+            "content": "<p>Random select background color</p>\n",
+            "title": "Random select background color"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2019",
+          "iframe": "https://leodesigaux.com/sandbox/select-this/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/select-this_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/select-this.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/select-this.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Cool card hover</p>\n",
+        "slug": "https-codepen-io-leoche-pen-gobwobyeditors0110",
+        "title": "Cool card hover",
+        "translations": [
+          {
+            "content": "<p>Cool card hover</p>\n",
+            "title": "Cool card hover"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2024",
+          "iframe": "https://dev.leodesigaux.com/demos/cool-card/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/coolcard_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/coolcard.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/coolcard.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Macbook Pro 3d CSS</p>\n",
+        "slug": "macbook-pro-3d-css",
+        "title": "Macbook Pro 3d CSS",
+        "translations": [
+          {
+            "content": "<p>Macbook Pro 3d CSS</p>\n",
+            "title": "Macbook Pro 3d CSS"
+          }
+        ],
+        "labsAcf": {
+          "category": "Game",
+          "css": null,
+          "js": null,
+          "year": "2018",
+          "iframe": "https://dev.leodesigaux.com/demos/macbook-pro-3d-css/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/macbook_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/macbook.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/macbook.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>SVG Circular Maze Generator</p>\n",
+        "slug": "svg-circular-maze-generator",
+        "title": "SVG Circular Maze Generator",
+        "translations": [
+          {
+            "content": "<p>SVG Circular Maze Generator</p>\n",
+            "title": "SVG Circular Maze Generator"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2017",
+          "iframe": "https://dev.leodesigaux.com/demos/svg-circular-maze-generator/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/circ_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/circ.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/circ.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Remade the twitter card CSS, needed to recreate them because showing a lot of embedded tweet make websites too much slow.</p>\n",
+        "slug": "twitter-card-remake",
+        "title": "Twitter card remake",
+        "translations": [
+          {
+            "content": "<p>Twitter card remake</p>\n",
+            "title": "Twitter card remake"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2023",
+          "iframe": "https://dev.leodesigaux.com/demos/twitter-card-remake",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/twitter_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/twitter.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/twitter.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>3D Gallery, moveable arts with mouse.</p>\n",
+        "slug": "3d-gallery",
+        "title": "3D Gallery",
+        "translations": [
+          {
+            "content": "<p>Galerie 3d, interactive avec la souris.</p>\n",
+            "title": "Galerie 3d"
+          }
+        ],
+        "labsAcf": {
+          "category": "Game",
+          "css": null,
+          "js": null,
+          "year": "2023",
+          "iframe": "https://dev.leodesigaux.com/demos/gallery/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/gallery_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/gallery.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/gallery.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Lifting a card in CSS with shiy effects.</p>\n",
+        "slug": "lifting-a-card",
+        "title": "Lifting a card",
+        "translations": [
+          {
+            "content": "<p>Lifting a card in CSS with shiy effects.</p>\n",
+            "title": "Lifting a card"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2021",
+          "iframe": "https://dev.leodesigaux.com/demos/lifting-card/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/card_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/card.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/card.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>3D Restaurant card</p>\n",
+        "slug": "3d-restaurant-card",
+        "title": "3D Restaurant card",
+        "translations": [
+          {
+            "content": "<p>3D Restaurant card</p>\n",
+            "title": "3D Restaurant card"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2021",
+          "iframe": "https://dev.leodesigaux.com/demos/restaurant-menu-3d-audio/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/restaurant_card_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/restaurant_card.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/restaurant_card.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>Web version of the Animal Crossing Prompt</p>\n",
+        "slug": "animal-crossing-prompt",
+        "title": "Animal Crossing Prompt",
+        "translations": [
+          {
+            "content": "<p>Version Web de la fenêtre de dialogue Animal Crossing</p>\n",
+            "title": "Fenêtre de dialogue Animal Crossing"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2020",
+          "iframe": "https://dev.leodesigaux.com/demos/animal-crossing/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/animalcrossing_frame.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/animalcrossing.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/animalcrossing.mp4"
+            }
+          }
+        }
+      },
+      {
+        "content": "<p>A glass panel in CSS with the help of the <code>backdrop-filter</code> and <code>linear-gradient</code> properties</p>\n",
+        "slug": "glass-pane",
+        "title": "Glass Pane",
+        "translations": [
+          {
+            "content": "<p>Glass Pane</p>\n",
+            "title": "Glass Pane"
+          }
+        ],
+        "labsAcf": {
+          "category": "Web",
+          "css": null,
+          "js": null,
+          "year": "2023",
+          "iframe": "https://dev.leodesigaux.com/demos/glass-pane/",
+          "html": null,
+          "github": null,
+          "img": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/ezgif-frame-001.png"
+            }
+          },
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/glass.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/glass.mp4"
+            }
+          }
+        }
+      },
+      {
         "content": "<p>Cuphead only made in HTML/CSS</p>\n",
         "slug": "cuphead-css",
         "title": "Cuphead CSS",
@@ -24,7 +724,16 @@
               "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/cuphead.jpg"
             }
           },
-          "preview": null
+          "preview": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/cuphead.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/cuphead.mp4"
+            }
+          }
         }
       },
       {
@@ -52,7 +761,12 @@
           },
           "preview": {
             "node": {
-              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/oizo.webm"
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/oizo-1.webm"
+            }
+          },
+          "previewmp4": {
+            "node": {
+              "mediaItemUrl": "https://wp.leodesigaux.com/wp-content/uploads/2024/09/oizo.mp4"
             }
           }
         }

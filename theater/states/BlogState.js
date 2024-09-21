@@ -11,7 +11,7 @@ class BlogState extends State {
         this.theater = theater;
         this.sphere = null;
         this.texts = [];
-        this.text = "Blog";
+        this.text = "Abc";
         this.textOffsets = [
             20,
             110,
@@ -133,10 +133,10 @@ class BlogState extends State {
         });
     }
     animate(time) {
-        if (this.texts.length == 0) return;
-        this.rotationZ = this.theater.mouseposition.x * Math.PI / 4;
+         if (this.texts.length == 0) return;
+        this.rotationZ = this.theater.mouseManager.position.x * Math.PI / 4;
         this.group.rotation.y = lerp(this.group.rotation.y, this.rotationZ, 0.01);
-        this.rotationX = -this.theater.mouseposition.y * Math.PI / 8;
+        this.rotationX = -this.theater.mouseManager.position.y * Math.PI / 8;
         this.group.rotation.x = lerp(this.group.rotation.x, this.rotationX, 0.01);
         this.sphere.rotation.x += 0.003 + 0.001 * window.theater.settings.timeScaleRatio * 100;
         this.sphere.rotation.z += 0.002 + 0.001 * window.theater.settings.timeScaleRatio * 100;

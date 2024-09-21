@@ -1,7 +1,14 @@
 <template>
     <div class="rootPage">
         <div class="container mx-auto px-6 py-12">
-
+            <div class="flex pb-4 justify-between h-[160px]">
+            <h1 class="h1-heading text-9xl flex relative bold text-center -translate-x-2 tracking-tighter bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] [background-position:-10%_65%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold w-[400px]"> 
+                <span class="h1-heading-span">B</span>
+                <span class="h1-heading-span">l</span>
+                <span class="h1-heading-span">o</span>
+                <span class="h1-heading-span">g</span>
+            </h1>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8" v-if="data">
                 <!-- Blog Post 1 -->
                 <NuxtLink :to="{ name: 'blog-slug', params: { slug: post.slug }}" class="backdrop-blur bg-[#00000000] hover:bg-[#ffffff06] group hover:y-4 hover:transition-none transition duration-1000 border-2 border-[#a5a5a51c] rounded-2xl shadow-md overflow-hidden active:translate-y-2 active:transition" v-for="post in data.posts.nodes" :key="post.id">
@@ -36,4 +43,18 @@
 <script setup>
 import * as he from 'he'
 import data from '/content/posts.json'
+import gsap from "gsap";
+onMounted(() => {
+  gsap.fromTo(
+    ".h1-heading",
+    { opacity: 0.2 },
+    { opacity: 1, duration: 1, delay:1.5, ease: "power1.inOut" }
+  );
+  
+  gsap.fromTo(
+    ".h1-heading-span",
+    { lineHeight: 3 },
+    { lineHeight: 0.9, duration: .8, stagger: .1, delay:0.1, ease: "expo.out" }
+  );
+});
 </script>

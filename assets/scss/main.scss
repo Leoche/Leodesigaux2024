@@ -4,7 +4,25 @@ body {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
 }
+html.lenis, html.lenis body {
+  height: auto;
+}
 
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
 .page-leave-active {
   transition: all .4s;
 }
@@ -95,5 +113,8 @@ body {
  border-radius: 8px;
 }
 .link-brutal {
-  @apply hover:text-white transition hover:transition-none duration-500;
+  @apply hover:text-ld-50 text-ld-400 transition hover:transition-none duration-1000;
+}
+.lined-content{
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1333333333), 0 32px 64px rgba(0, 0, 0, 0.5);
 }

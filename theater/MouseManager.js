@@ -40,15 +40,17 @@ class MouseManager {
             textCircle: document.querySelector('#textCircle'),
             cursorpoint: document.querySelector('.cursorpoint'),
         }
-        window.addEventListener("mousemove", this.mousemove.bind(this), false);
-        window.addEventListener("mousedown", this.mousedown.bind(this), false);
-        window.addEventListener("mouseup", this.mouseup.bind(this), false);
-        window.addEventListener("mouseenter", this.mouseenter.bind(this), false);
-        const linkItems = document.querySelectorAll(".cursor-link");
-        linkItems.forEach(item => {
-            item.addEventListener("mouseenter", (event) => { this.linkenter(event); });
-            item.addEventListener("mouseleave", (event) => { this.linkleave(event); });
-        });
+        window.addEventListener("mousemove", event => {this.mousemove(event)}, false);
+        window.addEventListener("mousedown", event => {this.mousedown(event)}, false);
+        window.addEventListener("mouseup", event => {this.mouseup(event)}, false);
+        window.addEventListener("mouseenter", event => {this.mouseenter(event)}, false);
+        document.addEventListener('mousemove', (event) => {
+            if ( ! event.target.closest(".cursor-link") ) {
+                this.linkleave(event);
+            } else {
+                this.linkenter(event.target.closest(".cursor-link"));
+            }
+        })
     }
     addEvent(event, callback) {
         this.events[event].push(callback);
@@ -75,7 +77,7 @@ class MouseManager {
         this.events.mouseenter.forEach(callback => callback(event));
     }
     linkenter(event) {
-        this.cursormouseLookAt = event.target;
+        this.cursormouseLookAt = event;
         this.events.linkenter.forEach(callback => callback(event));
     }
     linkleave(event) {
@@ -84,8 +86,8 @@ class MouseManager {
     }
     updateMousePosition(event) {
         this.position = {
-            x: ((this.position.x / window.innerWidth) * 2) - 1,
-            y: ((this.position.y / window.innerHeight) * 2) - 1
+            x: ((event.clientX / window.innerWidth) * 2) - 1,
+            y: ((event.clientY / window.innerHeight) * 2) - 1
         }
         this.positionReal = {
             x: event.clientX,
@@ -95,9 +97,11 @@ class MouseManager {
     animate(time) {
         if (this.cursormouseLookAt != null) {
             if (this.cursormouseLookAt.classList.contains("circle_container")) {
-                this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width / 2 * 1.25, 0.2);
+                this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width / 2 * 1.05, 0.2);
+                this.dom.cursorCircle.setAttribute("stroke-width", 2);
                 this.dom.textCursor.textContent = `${Math.round(this.positionReal.x)} x ${Math.round(this.positionReal.y)}`;
             } else {
+                this.dom.cursorCircle.setAttribute("stroke-width", 1);
                 this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width / 2 + 6, 0.2);
             }
             this.dom.textCursor.textContent = ``;
@@ -105,6 +109,7 @@ class MouseManager {
             this.cursormousePosition.y = lerp(this.cursormousePosition.y, this.cursormouseLookAt.getBoundingClientRect().top + 1 + this.cursormouseLookAt.getBoundingClientRect().height / 2, 0.2);
             this.cursormouseDx = lerp(this.cursormouseDx, 0, 0.2);
         } else {
+            this.dom.cursorCircle.setAttribute("stroke-width", 1);
             this.cursormouseHeight = lerp(this.cursormouseHeight, 32, 0.2);
             this.cursormouseWidth = lerp(this.cursormouseWidth, 32, 0.2);
             this.dom.cursorText.setAttribute("fill", "#8f8da9");

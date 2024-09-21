@@ -14,41 +14,45 @@
                                     </div>
                                 </NuxtLink>
                                 <div class="text-logo">
-                                    <span class="font-light text-blue-50">Léo</span><span class="font-bold text-white">DESIGAUX</span>
+                                    <span class="font-light text-ld-50">Léo</span><span class="font-bold text-white">DESIGAUX</span>
                                 </div>
-                                <p class="text-ldforeground">Développeur web depuis plus de 10 ans, je suis un passionné autodidacte de 25 ans.</p>
+                                <p class="text-ld-400">{{ $t('Web developer for over 10 years, I am a self-taught enthusiast of 25 years old.')}}</p>
                             </div>
                             <div class="w-4/12"></div>
                             <div class="w-4/12"></div>
                             <nav class="ml-auto flex flex-col gap-2 text-sm text-slate-400 w-4/12">
-                                <span class="text-ldwhite pb-4">NAVIGATION</span>
-                                <NuxtLink class="link-brutal mr-auto" to="/about"><span class="cursor-link">About</span></NuxtLink>
-                                <NuxtLink class="link-brutal mr-auto" to="/works"><span class="cursor-link">Works</span></NuxtLink>
-                                <NuxtLink class="link-brutal mr-auto" to="/experiments"><span class="cursor-link">Experiments</span></NuxtLink>
-                                <NuxtLink class="link-brutal mr-auto" to="/contact"><span class="cursor-link">Contact</span></NuxtLink>
+                                <span class="text-ld-100 pb-4">NAVIGATION</span>
+                                <NuxtLink class="link-brutal mr-auto" to="/about"><span class="cursor-link">{{ $t('About') }}</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/works"><span class="cursor-link">{{ $t('Works') }}</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/blog"><span class="cursor-link">{{ $t('Blog') }}</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/labs"><span class="cursor-link">{{ $t('Labs') }}</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="/contact"><span class="cursor-link">{{ $t('Contact') }}</span></NuxtLink>
                             </nav>
                         </div>
                     </div>
                     <div class="container mx-auto shadow-[1px_0px_0px_#ffffff11,-1px_0px_0px_#ffffff11]">
                         <div class="subfooter flex p-8 gap-8 container mx-auto mt-auto justify-between shadow-[0px_-1px_0px_#ffffff11] items-center">
-                            <div class="socials flex gap-4 mt-auto">
-                                <a class="cursor-link" href="google.com" target="_blank">
+                            <div class="socials flex gap-4 mt-auto text-ld-300/60">
+                                <a class="cursor-link flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
                                     <Icon name="ri:github-fill" size="24" />
                                 </a>
-                                <a class="cursor-link" href="google.com" target="_blank">
+                                <a class="cursor-link flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
                                     <Icon name="ri:linkedin-fill" size="24" />
                                 </a>
-                                <a class="cursor-link" href="google.com" target="_blank">
+                                <a class="cursor-link flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
                                     <Icon name="ri:twitter-fill" size="24" />
                                 </a>
-                                <a class="cursor-link" href="google.com" target="_blank">
+                                <a class="cursor-link flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
                                     <Icon name="ri:soundcloud-fill" size="24" />
                                 </a>
-                                <a class="cursor-link" href="google.com" target="_blank">
+                                <a class="cursor-link flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
                                     <Icon name="ri:steam-fill" size="24" />
                                 </a>
-                                <a class="cursor-link" href="google.com" target="_blank">
+                                <a class="cursor-link flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
                                     <Icon name="ri:twitch-fill" size="24" />
+                                </a>
+                                <a class="cursor-link flex mb-auto hover:text-ld-50 transition" href="https://discordapp.com/users/495297000481357834" target="_blank">
+                                    <Icon name="ri:discord-fill" size="24" />
                                 </a>
                             </div>
                             <div class="copyright flex gap-2 text-xs">

@@ -14,15 +14,9 @@
 <style lang="scss">
 @use "~/assets/scss/main.scss";
 </style>
-<script setup lang="ts">
-definePageMeta({
-  pageTransition: {
-    name: 'page',
-    mode: 'out-in'
-  }
-})
+<script setup>
 const isMenuOpen = ref(false)
-const menuopened = (isOpened: boolean) => {
+const menuopened = (isOpened) => {
   isMenuOpen.value = isOpened
 }
 </script>

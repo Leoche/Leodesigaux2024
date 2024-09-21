@@ -121,41 +121,41 @@ class AboutState extends State {
                 child.material = this.material;
             });
             this.gltf = gltf.scenes[0].children[0];
-            this.gltf.position.z = 500;
             gsap.fromTo(this.gltf.position, {
                 z: -800,
             },{
-                z: 0,
+                z: -200,
                 duration: 5,
                 ease: "power3.out",
             });
             this.theater.scene.add(this.gltf);
         });
 
-        this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 2), -10);
+        this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -10);
+        this.plane.translate = new THREE.Vector3(0, 0, -100);
         this.raycaster = new THREE.Raycaster();
         this.mouse = new THREE.Vector2();
         this.pointOfIntersection = new THREE.Vector3();
     }
     animate(time) {
         if(this.texts.length == 0) return;
-        this.rotationZ = this.theater.mouseposition.x * Math.PI / 4;
+        this.rotationZ = this.theater.mouseManager.position.x * Math.PI / 4;
         this.group.rotation.y = lerp(this.group.rotation.y, this.rotationZ, 0.01);
-        this.rotationX = -this.theater.mouseposition.y * Math.PI / 8;
+        this.rotationX = -this.theater.mouseManager.position.y * Math.PI / 8;
         this.group.rotation.x = lerp(this.group.rotation.x, this.rotationX, 0.01);
 
         if(!this.gltf) return;
-        this.mouse.x = lerp(this.mouse.x, ( this.theater.mousepositionReal.x / window.innerWidth ) * 2 - 1, 0.025);
-        this.mouse.y = lerp(this.mouse.y, -( this.theater.mousepositionReal.y / window.innerHeight ) * 2 + 1, 0.025);
+        this.mouse.x = lerp(this.mouse.x, ( this.theater.mouseManager.positionReal.x / window.innerWidth ) * 2 - 1, 0.025);
+        this.mouse.y = lerp(this.mouse.y, -( this.theater.mouseManager.positionReal.y / window.innerHeight ) * 2 + 1, 0.025);
         this.raycaster.setFromCamera(this.mouse, this.theater.camera);
         this.raycaster.ray.intersectPlane(this.plane, this.pointOfIntersection);
         this.pointOfIntersection.y *= .5;
         
-        this.gltf.position.y = Math.sin(time) * 50;
         this.gltf.lookAt(this.pointOfIntersection);
 
         const scrollTop = document.documentElement.scrollTop;
-        this.group.position.y = lerp(this.group.position.y, scrollTop * 0.3, 0.05);
+        this.group.position.y = lerp(this.group.position.y, scrollTop * 0.6, 0.05);
+        this.gltf.position.y = lerp(this.group.position.y, scrollTop * 0.9, 0.05);
     }
     leave() {
         this.texts.forEach(text => {
@@ -169,18 +169,8 @@ class AboutState extends State {
         });
     
         this.texts = [];
-    
-        if (this.sphere) {
-            this.theater.scene.remove(this.sphere);
-    
-            gsap.killTweensOf(this.sphere.position);
-    
-            this.sphere.geometry.dispose();
-            this.sphere.material.dispose();
-    
-            this.sphere = null;
-        }
-    
+        this.theater.scene.remove(this.gltf);
+        this.gltf.dispose();
         this.theater.scene.remove(this.group);
         this.group = new THREE.Group();
         this.offsetX = 0;

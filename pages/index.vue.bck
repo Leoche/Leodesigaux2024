@@ -1,0 +1,267 @@
+<template>
+  <div class="rootPage">
+    <div class="sur-theater h-[85vh] w-full -mt-12 md:-mt-24 relative">
+      <div class="container mx-auto h-screen">
+        <div class="h-full flex flex-col justify-center">
+          <h1 ref="lettering_job" class="lettering_job" aria-label="Hi, I'm Léo DESIGAUX, a fullStack Webdevelopper">
+            <div class="subtitle overflow-hidden max-h-[43px] flex">
+              <span v-for="(letter, index) in $t('Hi, I\'m ').split('')" :key="'0' + letter + index" class="relative text-ld-400 text-5xl/[1]">{{ letter == " " ? "&nbsp;" : letter }}</span>
+              <span v-for="(letter, index) in 'Léo DESIGAUX'.split('')" :key="'1' + letter + index" class="relative text-ld-300 text-5xl/[1] font-bold text-shadowed">{{ letter == " " ? "&nbsp;" : letter }}</span>
+              <span v-for="(letter, index) in $t(', a fullStack').split('')" :key="'2' + letter + index" class="relative text-ld-400 text-5xl/[1]">{{ letter == " " ? "&nbsp;" : letter }}</span>
+            </div>
+            <div class="h1-heading pr-4 text-9xl max-h-[145px] flex relative overflow-hidden bold text-center tracking-tighter bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] [background-position:105%_75%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold h1-heading">
+              <span v-for="(letter, index) in $t('Webdevelopper').split('')" :key="'3' + letter + index" class="font-extrabold tracking-tighter uppercase text-[145px]">{{ letter }}</span>
+            </div>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="relative pt-32 bg-[#000000bd] backdrop-blur clip-pathed lined-content">
+      <div class="container mx-auto flex flex-col gap-2 py-16 pt-40">
+        <h2 class="text-5xl text-center text-ld-200">What’s in my tool belt ?</h2>
+        <p class="mb-16 text-center text-2xl text-ld-500/80">The tools i work with</p>
+
+        <div class="grid grid-cols-3 bg-ld-600/10 px-8 py-6 rounded-xl">
+          <div class="flex-1 flex flex-col gap-4 px-8 border-r border-ld-800/20">
+            <h3 class="text-sm tracking-wider uppercase text-ld-500 text-center">FRONT-END</h3>
+            <div class="marquee">
+              <ul class="marquee__content">
+                <li><img src="/img/logos/tailwindcss.svg" alt=""></li>
+                <li><img src="/img/logos/vuejs.svg" alt=""></li>
+                <li><img src="/img/logos/gsap.svg" alt=""></li>
+                <li><img src="/img/logos/webgl.svg" alt=""></li>
+              </ul>
+              <ul class="marquee__content">
+                <li><img src="/img/logos/tailwindcss.svg" alt=""></li>
+                <li><img src="/img/logos/vuejs.svg" alt=""></li>
+                <li><img src="/img/logos/gsap.svg" alt=""></li>
+                <li><img src="/img/logos/webgl.svg" alt=""></li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col gap-4 px-8 border-r border-ld-800/20">
+            <h3 class="text-sm tracking-wider uppercase text-ld-500 text-center">FRAMEWORKS</h3>
+            <div class="marquee">
+              <ul class="marquee__content">
+                <li><img src="/img/logos/symfony.svg" alt=""></li>
+                <li><img src="/img/logos/laravel.png" alt=""></li>
+              </ul>
+              <ul class="marquee__content">
+                <li><img src="/img/logos/symfony.svg" alt=""></li>
+                <li><img src="/img/logos/laravel.png" alt=""></li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col gap-4 px-8">
+            <h3 class="text-sm tracking-wider uppercase text-ld-500 text-center">E-COMMERCE & CMS</h3>
+            <div class="marquee">
+              <ul class="marquee__content">
+                <li><img src="/img/logos/prestashop.png" alt=""></li>
+                <li><img src="/img/logos/wordpress.png" alt=""></li>
+                <li><img src="/img/logos/magento.png" alt=""></li>
+              </ul>
+              <ul class="marquee__content">
+                <li><img src="/img/logos/prestashop.png" alt=""></li>
+                <li><img src="/img/logos/wordpress.png" alt=""></li>
+                <li><img src="/img/logos/magento.png" alt=""></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script setup>
+import { gsap } from 'gsap';
+import { ref, onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n({ useScope: "global" });
+
+const lettering_job = ref();
+const route = useRoute();
+let isRevisited = false;
+
+const changeLocale = () => {
+  head.value = {
+    title: 'Léo DESIGAUX, ' + t('Webdevelopper')
+  }
+};
+const head = ref({});
+useHead(head);
+watch(locale, changeLocale, { immediate: true });
+
+// Check if session is already set
+if (localStorage.getItem("ldinit")) {
+  isRevisited = true;
+} else {
+  localStorage.setItem("ldinit", Math.random().toString(36).substring(2));
+}
+definePageMeta({
+  pageTransition: {
+    name: localStorage.getItem("ldinit") ? 'page-out' : 'page',
+    mode: 'out-in',
+  },
+});
+
+onMounted(() => {
+  changeLocale();
+  if (route.name === 'index') {
+    let animStarted = false;
+    const tlName = gsap.timeline({ defaults: { ease: "expo.out" } });
+    const tlTitle = gsap.timeline({
+      defaults: { stagger: 0.05, ease: "expo.out" }, onUpdate: () => {
+        if (tlTitle.progress() > 0.5 && !animStarted) {
+          animStarted = true;
+          tlName.play();
+        }
+      }
+    });
+    const animationDuration = isRevisited ? 0 : 0.6;
+    const logoAnimationDuration = isRevisited ? 0 : 0.6;
+
+    tlTitle.fromTo(".subtitle span", {
+      lineHeight: 3.5,
+    }, {
+      lineHeight: 1,
+      duration: animationDuration,
+      delay: .8,
+      stagger: function (index, target, list) {
+        let stag = index * 0.03;
+        if (index > 1) {
+          stag += .5;
+        }
+        if (index > 19) {
+          stag += .5;
+        }
+        return stag;
+      }
+    }, "<")
+    tlTitle.fromTo(".h1-heading span", {
+      lineHeight: 3,
+    }, {
+      lineHeight: 1,
+      duration: 0.5,
+      duration: logoAnimationDuration,
+      stagger: 0.05,
+      delay: 0.4
+    }, "-=90%")
+    tlTitle.play();
+
+    tlName.fromTo(".text-shadowed", {
+      y: 0,
+    }, {
+      y: -20,
+      ease: "power4.out",
+      duration: .5,
+      stagger: {
+        from: 6,
+        amount: .1
+      },
+      onStart: function () {
+        document.querySelector(".subtitle").classList.remove("overflow-hidden");
+        document.querySelector(".h1-heading").classList.remove("overflow-hidden");
+      }
+    }, 1.6)
+    let animchildStarted = false;
+    tlName.to(".text-shadowed", {
+      y: 0,
+      ease: "back.out(8)",
+      stagger: {
+        from: 6,
+        amount: .1
+      },
+      duration: .3,
+      onUpdate: function (self) {
+        if (this.progress() > 0.1 && !animchildStarted) {
+          animchildStarted = true;
+          gsap.to(".text-shadowed", {
+            color: "#f1f0f7",
+            textShadow: "0 0 1rem #ffffff44",
+            ease: "back.out(1.2)",
+            duration: .1,
+          });
+          var color = { value: "rgb(163, 166, 216)" };
+          gsap.to(color, {
+            value: "#f1f0f7",
+            ease: "back.out(1.2)",
+            duration: .1,
+            onUpdate: function () {
+              document.querySelector(".h1-heading").style.backgroundImage = "radial-gradient(" + color.value + " 10%, rgb(102, 108, 189) 40%, rgb(193 159 219) 60%, rgba(255, 255, 255, 0) 100%)";
+            }
+          });
+          gsap.to(".h1-heading span", {
+            lineHeight: 1.2,
+            stagger: {
+              from: 2,
+              amount: .2
+            },
+            ease: "circ.out",
+            duration: .4,
+          });
+          gsap.to(".h1-heading span", {
+            lineHeight: 1,
+            stagger: {
+              from: 2,
+              amount: .2
+            },
+            ease: "circ.in",
+            duration: .8,
+            delay: .4
+          });
+        }
+      }
+    }, ">")
+    tlName.pause();
+
+    isRevisited = true;
+  }
+});
+</script>
+<style scoped>
+#webdev_logo path {
+  stroke-width: 0.1px;
+}
+
+.clip-pathed {
+  clip-path: polygon(100% 100%, 0% 100%, 0.00% 5.24%, 6.67% 8.31%, 13.33% 11.68%, 20.00% 14.87%, 26.67% 17.43%, 33.33% 19.01%, 40.00% 19.37%, 46.67% 18.48%, 53.33% 16.45%, 60.00% 13.57%, 66.67% 10.24%, 73.33% 6.94%, 80.00% 4.13%, 86.67% 2.19%, 93.33% 1.41%, 100.00% 1.89%);
+}
+
+.marquee {
+  --gap: 0.4rem;
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 100%) 10%, rgb(0 0 0 / 100%) 90%, transparent 100%);
+  user-select: none;
+  padding: 16px;
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll 20s linear infinite;
+}
+
+.marquee__content img {
+  object-fit: contain;
+  object-position: center;
+  width: 200px;
+  height: 50px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+</style>
