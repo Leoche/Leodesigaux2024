@@ -1,7 +1,7 @@
 <template>
   <a
     v-on:click="switchLocale"
-    class="hover:text-white transition hover:transition-none duration-500 text-sm"
+    class="hover:text-white transition hover:transition-none duration-500"
     ><span class="cursor-link">
       <Slotmachine title1="EN" title2="FR" ref="langSlot" /> </span
   ></a>

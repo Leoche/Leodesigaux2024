@@ -1,15 +1,15 @@
 <template>
   <div class="rootPage">
     <div class="container mx-auto works">
-      <div class="p-8 gap-4">
+      <div class="p-6 md:p-8 gap-4">
         <div class="flex pb-6 justify-between">
-          <div class="h1-container -translate-x-4">
-            <h1 class="h1-heading pr-4 text-9xl max-h-[120px] flex relative overflow-hidden bold text-center tracking-tighter bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] [background-position:-10%_65%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold">
+          <div class="h1-container md:-translate-x-4">
+            <h1 class="h1-heading pr-4 ~text-[4rem]/[8rem] max-h-[120px] flex relative overflow-hidden bold text-center tracking-tighter bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] [background-position:-10%_65%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold">
               <span class="h1-heading-span" v-for="letter in $t('Works').split('')" :key="letter">{{ letter }}</span>
             </h1>
           </div>
         </div>
-        <div class="flex pb-8 justify-between">
+        <div class="flex gap-2 flex-col md:flex-row pb-8 items-center md:justify-between">
           <div class="flex toolbar">
             <div>
               <input type="radio" v-model="categoryModel" name="category" id="category_all" value="all" class="hidden peer/category_all" checked />
@@ -64,10 +64,10 @@
             </div>
           </div>
         </div>
-        <TransitionGroup name="grid" class="work-grid" tag="div" @before-leave="beforeLeave">
-          <div class="card max-w-[356px] min-h-[376px] origin-center flex shadow relative backdrop-blur transition-all duration-500 bg-[#00000073] border-2 border-[#a5a5a51c] rounded-2xl group" v-for="work in dataFilter" :key="work.workId" :data-id="work.workId">
+        <TransitionGroup name="grid" class="work-grid grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" tag="div" @before-leave="beforeLeave"> 
+          <div class="card md:max-w-[356px] min-h-[376px] md:min-h-[376px] origin-center flex shadow relative backdrop-blur transition-all duration-500 bg-[#00000073] border-2 border-[#a5a5a51c] rounded-2xl group" v-for="work in dataFilter" :key="work.workId" :data-id="work.workId">
             <div class="p-4 box-border flex flex-col gap-4 flex-grow">
-              <figure class="w-full relative h-48 rounded-lg">
+              <figure class="w-full relative md:h-48 rounded-lg aspect-[1.7_/_1] md:aspect-auto">
                 <img v-bind:src="work.workAcf.previewUrl.node.mediaItemUrl" v-bind:alt="work.localTitle" class="absolute w-full h-full t-0 l-0 z-20 rounded-xl object-cover blur-xl brightness-150 opacity-30" />
                 <img v-bind:src="work.workAcf.previewUrl.node.mediaItemUrl" v-bind:alt="work.localTitle" class="absolute w-full h-full t-0 l-0 z-20 rounded-xl object-cover" />
               </figure>
@@ -217,12 +217,6 @@ const beforeLeave = (el) => {
 .activeTag {
   background: #26253a33;
   color: rgb(230 227 241);
-}
-
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
 }
 
 .grid-leave-active,

@@ -1,5 +1,8 @@
+import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 export default {
     theme: {
+        screens,
+        fontSize,
         extend: {
             colors: {
                 ldbackground: "#0a0919",
@@ -31,5 +34,11 @@ export default {
             },
         }
     },
-    plugins: [require('@tailwindcss/typography')]
+    content: {
+        files: ['./pages/**/*.vue', './components/**/*.vue', './layouts/**/*.vue', './app.vue'],
+        extract
+    },
+    plugins: [require('@tailwindcss/typography'), fluid({
+        checkSC144: false
+      })]
 }

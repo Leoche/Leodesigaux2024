@@ -154,8 +154,8 @@ class AboutState extends State {
         this.gltf.lookAt(this.pointOfIntersection);
 
         const scrollTop = document.documentElement.scrollTop;
-        this.group.position.y = lerp(this.group.position.y, scrollTop * 0.6, 0.05);
-        this.gltf.position.y = lerp(this.group.position.y, scrollTop * 0.9, 0.05);
+        this.group.position.y = lerp(this.group.position.y, scrollTop * 0.3, 0.05);
+        this.gltf.position.y = lerp(this.gltf.position.y, scrollTop * 0.2 + Math.sin(time)*50, 0.05);
     }
     leave() {
         this.texts.forEach(text => {
@@ -170,7 +170,6 @@ class AboutState extends State {
     
         this.texts = [];
         this.theater.scene.remove(this.gltf);
-        this.gltf.dispose();
         this.theater.scene.remove(this.group);
         this.group = new THREE.Group();
         this.offsetX = 0;

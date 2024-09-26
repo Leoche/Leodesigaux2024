@@ -3,7 +3,8 @@ let asciiShader = {
     uniforms: {
         "tDiffuse": { value: null },
         "iResolution": { value: new THREE.Vector3(window.innerWidth, window.innerHeight, 1) },
-        "iChannel0": { value: null }
+        "iChannel0": { value: null },
+        "ratioiResolution": { value: 1.0 }
     },
     vertexShader: `
         varying vec2 vUv;
@@ -17,6 +18,7 @@ let asciiShader = {
 
         uniform sampler2D tDiffuse;
         uniform vec3 iResolution;
+        uniform float ratioiResolution;
         varying vec2 vUv;
 
         float character(float n, vec2 p) {
@@ -28,8 +30,9 @@ let asciiShader = {
         }
 
         void main() {
-            vec2 uv = vUv * iResolution.xy;
-            vec2 scaledUV = floor(uv / vec2(8.0)) * vec2(8.0) / iResolution.xy;
+            vec2 newiResolution = iResolution.xy * ratioiResolution;
+            vec2 uv = vUv * newiResolution;
+            vec2 scaledUV = floor(uv / vec2(8.0)) * vec2(8.0) / newiResolution;
             vec3 col = texture2D(tDiffuse, scaledUV).rgb;
 
             float gray = (col.r + col.g + col.b) / 4.0;
@@ -55,7 +58,7 @@ let asciiShader = {
             for (float i = -4.0; i <= 4.0; i += 1.0) {
                 for (float j = -4.0; j <= 4.0; j += 1.0) {
                     vec2 offset = vec2(i, j) * blurSize;
-                    blurredCol += texture2D(tDiffuse, (uv + offset) / iResolution.xy).rgb;
+                    blurredCol += texture2D(tDiffuse, (uv + offset) / newiResolution).rgb;
                 }
             }
             blurredCol /= 81.0; // Adjust divisor based on the number of samples

@@ -53,7 +53,7 @@ html.lenis, html.lenis body {
 .rootPage {
   position: relative;
   z-index: 10;
-  box-shadow: inset 0 -1px 0 #FFFFFF22, 0 32px 64px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 -1px 0 #FFFFFF22, 0 64px 64px rgba(0, 0, 0, 0.5);
 }
 .cursorpoint {
   position: fixed;
@@ -113,8 +113,25 @@ html.lenis, html.lenis body {
  border-radius: 8px;
 }
 .link-brutal {
-  @apply hover:text-ld-50 text-ld-400 transition hover:transition-none duration-1000;
+  @apply hover:text-ld-50 text-ld-600 transition hover:transition-none duration-1000;
 }
 .lined-content{
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1333333333), 0 32px 64px rgba(0, 0, 0, 0.5);
+}
+.backdrop-blur{
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+html, body {
+  overscroll-behavior: none;
+}
+canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+  width: 100vw !important;
+  height: 100vh !important;
 }

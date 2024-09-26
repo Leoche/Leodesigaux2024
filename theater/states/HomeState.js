@@ -41,8 +41,8 @@ class HomeState extends State {
         const scrollTop = document.documentElement.scrollTop;
         this.titleY = lerp(this.titleY, scrollTop * -0.4, 0.05);
         this.planeY = lerp(this.planeY, scrollTop * 0.05, 0.05);
-        this.title.style.transform = "translateY(" + (this.titleY) + "px)";
         this.plane.position.y = this.planeY;
+        if(this.title) this.title.style.transform = "translateY(" + (this.titleY) + "px)";
     }
     leave() {
         this.theater.scene.remove(this.plane);

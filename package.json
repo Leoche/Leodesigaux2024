@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node pregenerate.js && nuxt build",
-    "dev": "node pregenerate.js && nuxt dev --watch",
+    "dev": "node pregenerate.js && nuxt dev --watch --host",
     "generate": "node pregenerate.js && nuxt generate",
     "preview": "node pregenerate.js && nuxt preview",
     "generateContent": "node pregenerate.js"
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.14",
+    "fluid-tailwind": "^1.0.3",
     "sass": "^1.77.8"
   }
 }

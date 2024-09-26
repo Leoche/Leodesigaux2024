@@ -17,6 +17,9 @@ class Theater {
 
     constructor() {
         window.theater = this;
+        if(document.querySelector('canvas')) {
+            document.querySelectorAll("canvas").forEach(el => el.remove());
+        }
         document.querySelector('.appLayout').style.cursor = `none`;
         this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 3000);;
         this.controls = null;
@@ -26,7 +29,7 @@ class Theater {
         this.stateManager = new StateManager(this);
         this.time = 0;
         this.debug = false;
-        this.debugFps = true;
+        this.debugFps = false;
         this.asciiShader = asciiShader;
         if(this.debugFps) {
             this.stats = new Stats()
@@ -84,6 +87,7 @@ class Theater {
         this.composer = new EffectComposer(this.renderer, this.renderTarget);
         this.renderPass = new RenderPass(this.scene, this.camera);
         this.composer.addPass(this.renderPass);
+        this.asciiShader.uniforms.ratioiResolution.value = window.isMobile ? 2.0 : 1.0;
         this.asciiPass = new ShaderPass(this.asciiShader);
         this.composer.addPass(this.asciiPass);
         this.setupMouse();
@@ -121,6 +125,7 @@ class Theater {
 
     setupMouse() {
         this.mouseManager = new MouseManager();
+        if(window.isMobile) return;
         this.mouseManager.addEvent("mousedown", (event) => {
             this.settings.timeScaleRatio = 0.1;
         }, false);

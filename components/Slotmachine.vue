@@ -34,13 +34,13 @@ const toggle = (active) => {
         })
     } else {
         gsap.to(title1Container.value.querySelectorAll('span'), {
-            y: -20,
+            y: "-100%",
             duration: duration,
             stagger: stagger,
             ease:ease
         })
         gsap.to(title2Container.value.querySelectorAll('span'), {
-            y: -20,
+            y: "-100%",
             duration: duration,
             stagger: stagger,
             delay:delay,

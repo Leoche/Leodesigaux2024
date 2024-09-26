@@ -31,6 +31,7 @@ class MouseManager {
             linkenter: [],
             linkleave: []
         }
+        this.initialized = false
 
         this.dom = {
             cursor: document.querySelector('.cursor'),
@@ -40,17 +41,29 @@ class MouseManager {
             textCircle: document.querySelector('#textCircle'),
             cursorpoint: document.querySelector('.cursorpoint'),
         }
-        window.addEventListener("mousemove", event => {this.mousemove(event)}, false);
-        window.addEventListener("mousedown", event => {this.mousedown(event)}, false);
-        window.addEventListener("mouseup", event => {this.mouseup(event)}, false);
-        window.addEventListener("mouseenter", event => {this.mouseenter(event)}, false);
-        document.addEventListener('mousemove', (event) => {
-            if ( ! event.target.closest(".cursor-link") ) {
-                this.linkleave(event);
-            } else {
-                this.linkenter(event.target.closest(".cursor-link"));
-            }
-        })
+        if (this.initialized) return;
+        if (window.isMobile) {
+            // For mobile devices, use touch events
+            console.log("asda");
+            this.initialized = true;
+
+            window.addEventListener("touchmove", event => { this.mousemove(event) }, false);
+            window.addEventListener("touchstart", event => { this.mousedown(event) }, false);
+            window.addEventListener("touchend", event => { this.mouseup(event) }, false);
+        } else {
+            // For non-mobile devices, use mouse events
+            window.addEventListener("mousemove", event => { this.mousemove(event) }, false);
+            window.addEventListener("mousedown", event => { this.mousedown(event) }, false);
+            window.addEventListener("mouseup", event => { this.mouseup(event) }, false);
+            window.addEventListener("mouseenter", event => { this.mouseenter(event) }, false);
+            document.addEventListener('mousemove', (event) => {
+                if (!event.target.closest(".cursor-link")) {
+                    this.linkleave(event);
+                } else {
+                    this.linkenter(event.target.closest(".cursor-link"));
+                }
+            });
+        }
     }
     addEvent(event, callback) {
         this.events[event].push(callback);
@@ -85,16 +98,28 @@ class MouseManager {
         this.events.linkleave.forEach(callback => callback(event));
     }
     updateMousePosition(event) {
-        this.position = {
-            x: ((event.clientX / window.innerWidth) * 2) - 1,
-            y: ((event.clientY / window.innerHeight) * 2) - 1
-        }
-        this.positionReal = {
-            x: event.clientX,
-            y: event.clientY
+        if (event.touches) {
+            this.position = {
+                x: ((event.touches[0].clientX / window.innerWidth) * 2) - 1,
+                y: ((event.touches[0].clientY / window.innerHeight) * 2) - 1
+            }
+            this.positionReal = {
+                x: event.touches[0].clientX,
+                y: event.touches[0].clientY
+            }
+        } else {
+            this.position = {
+                x: ((event.clientX / window.innerWidth) * 2) - 1,
+                y: ((event.clientY / window.innerHeight) * 2) - 1
+            }
+            this.positionReal = {
+                x: event.clientX,
+                y: event.clientY
+            }
         }
     }
     animate(time) {
+        if (window.isMobile) return;
         if (this.cursormouseLookAt != null) {
             if (this.cursormouseLookAt.classList.contains("circle_container")) {
                 this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width / 2 * 1.05, 0.2);

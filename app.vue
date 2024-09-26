@@ -3,8 +3,8 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-    <div class="cursorpoint"></div>
-    <svg class="cursor" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+    <div class="hidden md:block cursorpoint"></div>
+    <svg class="hidden md:block cursor" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
       <!-- 32x32 centered circle with white border -->
       <circle cx="300" cy="300" r="32" stroke="white" stroke-width="1" fill="none" />
 
@@ -24,6 +24,7 @@
   </div>
 </template>
 <script setup>
+window.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 import Lenis from 'lenis'
 const lenis = new Lenis()
 useHead({
@@ -35,8 +36,8 @@ useHead({
     { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' }
   ],
   meta: [
-    { name: 'msapplication-TileColor', content: '#000000' },
-    { name: 'theme-color', content: '#ffffff' }
+    { name: 'msapplication-TileColor', content: '#05050e' },
+    { name: 'theme-color', content: '#05050e' }
   ]
 })
 function raf(time) {
