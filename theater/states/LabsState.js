@@ -21,7 +21,7 @@ class LabsState extends State {
         ];
         this.offsetX = 0;
         this.baseOffsetX = -70;
-        this.baseOffsetY = 175;
+        this.baseOffsetY = 0;
         this.group = new THREE.Group();
         this.rotationZ = 0;
         this.rotationX = 0;
@@ -36,7 +36,7 @@ class LabsState extends State {
             specular: 0xff3c
         });
         this.effect = new MarchingCubes(32, this.material, false, false);
-        this.effect.position.set( 0, 0, -600 );
+        this.effect.position.set( 0, this.baseOffset, -600 );
         this.effect.scale.set( 1000, 1000, 100 );
         this.effect.enableUvs = false;
         this.effect.enableColors = false;
@@ -53,7 +53,7 @@ class LabsState extends State {
     animate(time) {
         this.updateCubes( this.effect, time, this.maxBlobs )
         const scrollTop = document.documentElement.scrollTop;
-        this.effect.position.y = lerp(this.effect.position.y, scrollTop * 0.5, 0.05);
+        this.effect.position.y = lerp(this.effect.position.y, this.baseOffsetY + scrollTop * 0.5, 0.05);
         this.rotationZ = this.theater.mouseManager.position.x * Math.PI / 16;
         this.effect.rotation.z = lerp(this.effect.rotation.z, this.rotationZ, 0.1);
     }

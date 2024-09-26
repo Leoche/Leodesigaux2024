@@ -21,7 +21,7 @@ class Theater {
             document.querySelectorAll("canvas").forEach(el => el.remove());
         }
         document.querySelector('.appLayout').style.cursor = `none`;
-        this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 3000);;
+        this.camera = new THREE.PerspectiveCamera(50, window.screen.width / window.screen.height, 1, 3000);;
         this.controls = null;
         this.scene = new THREE.Scene();
         this.clock = new THREE.Clock();
@@ -65,21 +65,21 @@ class Theater {
         this.stateManager.init();
 
         this.renderer = new THREE.WebGLRenderer({ alpha: true });
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setSize(window.screen.width, window.screen.height);
 
 
         this.effect = new AsciiEffect(this.renderer, ' .,:;i1tfLCG08@', {
             invert: true,
             resolution: 0.125
         });
-        this.effect.setSize(window.innerWidth, window.innerHeight);
+        this.effect.setSize(window.screen.width, window.screen.height);
         this.effect.domElement.style.color = '#999999';
         this.effect.domElement.style.backgroundColor = 'black';
 
         document.querySelector('#background').appendChild(this.effect.domElement);
         window.addEventListener('resize', () => this.onWindowResize());
 
-        this.renderTarget = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight, {
+        this.renderTarget = new THREE.WebGLRenderTarget(window.screen.width, window.screen.height, {
             format: THREE.RGBAFormat,  // Ensure RGBA format to include alpha channel
             type: THREE.UnsignedByteType,
             stencilBuffer: false
@@ -138,14 +138,14 @@ class Theater {
     }
 
     onWindowResize() {
-        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.aspect = window.screen.width / window.screen.height;
         this.camera.updateProjectionMatrix();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.effect.setSize(window.innerWidth, window.innerHeight);
-        this.composer.setSize(window.innerWidth, window.innerHeight);
-        this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.asciiShader.uniforms.iResolution.value.set(window.innerWidth, window.innerHeight, 1);
-        this.renderTarget.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setSize(window.screen.width, window.screen.height);
+        this.effect.setSize(window.screen.width, window.screen.height);
+        this.composer.setSize(window.screen.width, window.screen.height);
+        this.camera.aspect = window.screen.width / window.screen.height;
+        this.asciiShader.uniforms.iResolution.value.set(window.screen.width, window.screen.height, 1);
+        this.renderTarget.setSize(window.screen.width, window.screen.height);
         this.composer.removePass(this.composer.passes[1]);
         this.asciiPass = new ShaderPass(this.asciiShader);
         this.composer.addPass(this.asciiPass);

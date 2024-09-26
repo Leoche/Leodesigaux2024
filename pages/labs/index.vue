@@ -115,7 +115,6 @@ const changeLocale = () => {
 const playVideo = (event) => {
     const video = event.currentTarget.querySelector('video');
     if (video) {
-        console.log(video);
         video.play();
     }
 };

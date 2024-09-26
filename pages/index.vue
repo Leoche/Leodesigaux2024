@@ -9,7 +9,7 @@
               <span v-for="(letter, index) in 'Léo DESIGAUX'.split('')" :key="'1' + letter + index" class="relative text-ld-300 font-medium text-shadowed overflow-hidden ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem] "><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
               <span v-for="(letter, index) in $t(', a fullStack').split('')" :key="'2' + letter + index" class="relative font-light	 text-ld-400 overflow-hidden ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem]"><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
             </div>
-            <div :class="getTitleClasses" class="h1-heading pr-4 flex relative bold mt-[2px] md:mt-0 text-center bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] md:[background-position:105%_75%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold h1-heading tracking-[-0.1em]">
+            <div :class="getTitleClasses" class="h1-heading pr-4 flex relative bold mt-[2px] md:mt-0 text-center bg-[radial-gradient(rgb(163,166,216)_10%,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] md:[background-position:105%_75%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold h1-heading tracking-[-0.1em]">
               <span v-for="(letter, index) in $t('Webdevelopper').split('')" :key="'3' + letter + index" class="font-extrabold uppercase">{{ letter }}</span>
             </div>
           </h1>

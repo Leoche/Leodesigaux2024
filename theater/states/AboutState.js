@@ -22,8 +22,9 @@ class AboutState extends State {
             110,
         ];
         this.offsetX = 0;
-        this.baseOffsetX = -50;
-        this.baseOffsetY = 150;
+        this.baseOffsetX = -35;
+        this.baseOffsetY = window.isMobile ? 500 : 150;
+        this.gltfOffsetY = window.isMobile ? window.screen.height * -0.3 : 0;
         this.group = new THREE.Group();
         this.rotationZ = 0;
         this.rotationX = 0;
@@ -102,7 +103,9 @@ class AboutState extends State {
             });
         } );
         this.theater.scene.add(this.group);
-
+        if(window.isMobile) {
+            this.group.scale.set(0.5, 0.5, 0.5);
+        }
         this.gltf = null;
         this.gltfGroup = new THREE.Group();
 
@@ -114,9 +117,11 @@ class AboutState extends State {
         loaderGltf.load("/models/head3.glb", (gltf) => {
             gltf.scenes[0].children[0].scale.set(this.headScale, this.headScale, this.headScale);
             gltf.scenes[0].children[0].material = this.material;
-            gltf.scenes[0].children[0].position.x = -600;
-            gltf.scenes[0].children[0].position.y = 0;
-            console.log(gltf.scenes[0].children[0])
+            if(window.isMobile) {
+                gltf.scenes[0].children[0].position.x = 0;
+            } else {
+                gltf.scenes[0].children[0].position.x = -600;
+            }
             gltf.scenes[0].children[0].children.forEach(child => {
                 child.material = this.material;
             });
@@ -145,17 +150,25 @@ class AboutState extends State {
         this.group.rotation.x = lerp(this.group.rotation.x, this.rotationX, 0.01);
 
         if(!this.gltf) return;
-        this.mouse.x = lerp(this.mouse.x, ( this.theater.mouseManager.positionReal.x / window.innerWidth ) * 2 - 1, 0.025);
-        this.mouse.y = lerp(this.mouse.y, -( this.theater.mouseManager.positionReal.y / window.innerHeight ) * 2 + 1, 0.025);
-        this.raycaster.setFromCamera(this.mouse, this.theater.camera);
-        this.raycaster.ray.intersectPlane(this.plane, this.pointOfIntersection);
-        this.pointOfIntersection.y *= .5;
-        
-        this.gltf.lookAt(this.pointOfIntersection);
+        if(!window.isMobile) {
+            this.mouse.x = lerp(this.mouse.x, ( this.theater.mouseManager.positionReal.x / window.innerWidth ) * 2 - 1, 0.025);
+            this.mouse.y = lerp(this.mouse.y, -( this.theater.mouseManager.positionReal.y / window.innerHeight ) * 2 + 1, 0.025);
+            this.raycaster.setFromCamera(this.mouse, this.theater.camera);
+            this.raycaster.ray.intersectPlane(this.plane, this.pointOfIntersection);
+            this.pointOfIntersection.y *= .5;
+            
+            this.gltf.lookAt(this.pointOfIntersection);
+            this.gltf.position.y = lerp(this.gltf.position.y, this.gltfOffsetY +scrollTop * 0.2 + Math.sin(time)*50, 0.05);
+
+        } else {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollMax = -window.screen.height + Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+            this.gltf.position.y = lerp(this.gltf.position.y, this.gltfOffsetY + Math.sin(time)*50, 0.05);
+            this.gltf.rotation.x = gsap.utils.mapRange(0, scrollMax, 0, -0.90, scrollTop);
+        }
 
         const scrollTop = document.documentElement.scrollTop;
         this.group.position.y = lerp(this.group.position.y, scrollTop * 0.3, 0.05);
-        this.gltf.position.y = lerp(this.gltf.position.y, scrollTop * 0.2 + Math.sin(time)*50, 0.05);
     }
     leave() {
         this.texts.forEach(text => {
