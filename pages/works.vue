@@ -64,7 +64,7 @@
             </div>
           </div>
         </div>
-        <TransitionGroup name="grid" class="work-grid grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" tag="div" @before-leave="beforeLeave"> 
+        <TransitionGroup name="grid" class="work-grid grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 opacity-0" tag="div" @before-leave="beforeLeave"> 
           <div class="card md:max-w-[356px] min-h-[376px] md:min-h-[376px] origin-center flex shadow relative backdrop-blur transition-all duration-500 bg-[#00000073] border-2 border-[#a5a5a51c] rounded-[24px] group" v-for="work in dataFilter" :key="work.workId" :data-id="work.workId">
             <div class="p-4 box-border flex flex-col gap-4 flex-grow">
               <figure class="w-full relative md:h-48 rounded-[4px] aspect-[1.7_/_1] md:aspect-auto">
@@ -113,18 +113,21 @@ const typeModel = ref(["perso", "pro"]);
 
 definePageMeta({
   pageTransition: {
-    name: 'page-out',
+    name: 'page',
     mode: 'out-in',
   },
 });
 
-onMounted(() => {
+onMounted(async () => {
   changeLocale();
+  await nextTick();
   gsap.fromTo(
     ".toolbar",
     { opacity: 0 },
     { opacity: 1, duration: 0.4, delay: 0.5 }
   );
+  gsap.set(".card", { y: 32, opacity: 0 });
+  document.querySelector(".work-grid").classList.remove("opacity-0");
   gsap.fromTo(
     ".card",
     {
@@ -139,7 +142,9 @@ onMounted(() => {
       ease: "back.out(1.2)",
       stagger: 0.1,
       onComplete: function () {
-        gsap.set(this.targets(), { clearProps: "all" });
+        this.targets().forEach(el => {
+          gsap.set(this.targets(), { clearProps: "all" });
+        });
       },
     }
   );
