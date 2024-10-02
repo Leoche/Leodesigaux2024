@@ -9,74 +9,165 @@ class LabsState extends State {
     constructor(theater) {
         super();
         this.theater = theater;
-        this.sphere = null;
-        this.texts = [];
-        this.text = "Works";
-        this.textOffsets = [
-            0,
-            160,
-            105,
-            60,
-            90,
-        ];
-        this.offsetX = 0;
-        this.baseOffsetX = -70;
-        this.baseOffsetY = 0;
-        this.group = new THREE.Group();
-        this.rotationZ = 0;
-        this.rotationX = 0;
-        this.initiated = false;
-        this.maxBlobs = 24;
+        this.group = null;
+        this.maxBlobs = 50;
     }
     enter() {
-        this.material = new THREE.MeshPhongMaterial({
-            flatShading: false,
-            color: 0x7800ff,
-            shininess: 7,
-            specular: 0xff3c
-        });
-        this.effect = new MarchingCubes(32, this.material, false, false);
-        this.effect.position.set( 0, this.baseOffset, -600 );
-        this.effect.scale.set( 1000, 1000, 100 );
-        this.effect.enableUvs = false;
-        this.effect.enableColors = false;
-        this.theater.scene.add( this.effect );
-        gsap.fromTo(this.effect.position, {
+        this.maxBlobs = window.isMobile ? 15 : 75;
+        this.group = new THREE.Group();
+        this.material = new THREE.MeshPhongMaterial(this.theater.materialParams);
+        // add random spheres and adds to the group
+        for (let i = 0; i < this.maxBlobs; i++) {
+            this.group.add(this.getRandomShape());
+        }
+        this.theater.scene.add(this.group);
+        gsap.from(this.group.position, {
+            duration: 2,
+            delay: 0.5,
             z: -600,
-        }, {
-            z: -60,
-            duration: 5,
-            delay: 1,
-            ease: "back.out(2)"
         });
+    }
+    getRandomShape() {
+        const shapes = [
+            this.createSphere.bind(this),
+            this.createBox.bind(this),
+            this.createCylinder.bind(this),
+            this.createTorus.bind(this),
+            this.createCone.bind(this)
+        ];
+
+        // Randomly select a shape from the list
+        const randomShapeIndex = Math.floor(Math.random() * shapes.length);
+        return shapes[randomShapeIndex]();
+    }
+    createSphere() {
+        const sphere = new THREE.Mesh(new THREE.SphereGeometry(Math.random() * 100 + 10, 8, 8), this.material);
+        const ratioZ = 500;
+        const ratioX = 200;
+        sphere.position.x = window.isMobile ? Math.random() * 400 - 200 : Math.random() * 3000 - 800;
+        sphere.position.y = window.isMobile ? Math.random() * 600 - 300 : (Math.random() * ratioX + 100) * 2 + 20;
+        sphere.position.z = Math.random() * ratioZ - ratioZ / 2;
+        sphere.newz = Math.random() * ratioZ - ratioZ;
+        sphere.position.y = (Math.random() > 0.5) ? sphere.position.y : -sphere.position.y;
+        sphere.rotationAdds = new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+        sphere.speed = 0.005 * Math.random();
+        return sphere;
+    }
+    createBox() {
+        const box = new THREE.Mesh(
+            new THREE.BoxGeometry(Math.random() * 100 + 10, Math.random() * 100 + 10, Math.random() * 100 + 10),
+            this.material
+        );
+        const ratioZ = 500;
+        const ratioX = 200;
+        box.position.x = window.isMobile ? Math.random() * 400 - 200 : Math.random() * 3000 - 800;
+        box.position.y = window.isMobile ? Math.random() * 600 - 300 : (Math.random() * ratioX + 100) * 2 + 20;
+        box.position.z = Math.random() * ratioZ - ratioZ / 2;
+        box.newz = Math.random() * ratioZ - ratioZ;
+        box.position.y = (Math.random() > 0.5) ? box.position.y : -box.position.y;
+        box.rotationAdds = new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+        box.speed = 0.005 * Math.random();
+        return box;
+    }
+    createCylinder() {
+        const cylinder = new THREE.Mesh(
+            new THREE.CylinderGeometry(Math.random() * 50 + 10, Math.random() * 50 + 10, Math.random() * 100 + 20, 8),
+            this.material
+        );
+        const ratioZ = 500;
+        const ratioX = 200;
+        cylinder.position.x = window.isMobile ? Math.random() * 400 - 200 : Math.random() * 3000 - 800;
+        cylinder.position.y = window.isMobile ? Math.random() * 600 - 300 : (Math.random() * ratioX + 100) * 2 + 20;
+        cylinder.position.z = Math.random() * ratioZ - ratioZ / 2;
+        cylinder.newz = Math.random() * ratioZ - ratioZ;
+        cylinder.position.y = (Math.random() > 0.5) ? cylinder.position.y : -cylinder.position.y;
+        cylinder.rotationAdds = new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+        cylinder.speed = 0.005 * Math.random();
+        return cylinder;
+    }
+    createCone() {
+        const cone = new THREE.Mesh(
+            new THREE.ConeGeometry(Math.random() * 50 + 10, Math.random() * 100 + 20, 8),
+            this.material
+        );
+        const ratioZ = 500;
+        const ratioX = 200;
+        cone.position.x = window.isMobile ? Math.random() * 400 - 200 : Math.random() * 3000 - 800;
+        cone.position.y = window.isMobile ? Math.random() * 600 - 300 : (Math.random() * ratioX + 100) * 2 + 20;
+        cone.position.z = Math.random() * ratioZ - ratioZ / 2;
+        cone.newz = Math.random() * ratioZ - ratioZ;
+        cone.position.y = (Math.random() > 0.5) ? cone.position.y : -cone.position.y;
+        cone.rotationAdds = new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+        cone.speed = 0.005 * Math.random();
+        return cone;
+    }
+
+    createTorus() {
+        const torus = new THREE.Mesh(
+            new THREE.TorusGeometry(Math.random() * 50 + 10, Math.random() * 10 + 5, 8, 100),
+            this.material
+        );
+        const ratioZ = 500;
+        const ratioX = 200;
+        torus.position.x = window.isMobile ? Math.random() * 400 - 200 : Math.random() * 3000 - 800;
+        torus.position.y = window.isMobile ? Math.random() * 600 - 300 : (Math.random() * ratioX + 100) * 2 + 20;
+        torus.position.z = Math.random() * ratioZ - ratioZ / 2;
+        torus.newz = Math.random() * ratioZ - ratioZ;
+        torus.position.y = (Math.random() > 0.5) ? torus.position.y : -torus.position.y;
+        torus.rotationAdds = new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+        torus.speed = 0.005 * Math.random();
+        return torus;
     }
     animate(time) {
-        this.updateCubes( this.effect, time, this.maxBlobs )
         const scrollTop = document.documentElement.scrollTop;
-        this.effect.position.y = lerp(this.effect.position.y, this.baseOffsetY + scrollTop * 0.5, 0.05);
-        this.rotationZ = this.theater.mouseManager.position.x * Math.PI / 16;
-        this.effect.rotation.z = lerp(this.effect.rotation.z, this.rotationZ, 0.1);
+        const pageHeight = (function () {
+            return Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight,
+                document.body.offsetHeight,
+                document.documentElement.offsetHeight,
+                document.body.clientHeight,
+                document.documentElement.clientHeight
+            );
+        })();
+        if (document.querySelector('.wrapper-pin')) {
+            if (!window.isMobile) {
+                if (scrollTop < document.querySelector('.wrapper-pin').scrollHeight - window.innerHeight) {
+                    this.group.position.x = lerp(this.group.position.x, -scrollTop * .9, 0.05);
+                } else {
+                    this.group.position.x = lerp(this.group.position.x, -(document.querySelector('.wrapper-pin').scrollHeight - window.innerHeight) * .9, 0.05);
+                }
+            }
+        }
+        this.group.children.forEach(sphere => {
+            sphere.rotation.x += sphere.rotationAdds.x * sphere.speed;
+            sphere.rotation.y += sphere.rotationAdds.y * sphere.speed;
+            sphere.rotation.z += sphere.rotationAdds.z * sphere.speed;
+        });
     }
     leave() {
-        this.theater.scene.remove(this.effect);
-        this.offsetX = 0;
-    }
-    updateCubes( object, time, numblobs) {
-        object.reset();
-        const subtract = 12;
-        const strength = 1.2 / ( ( Math.sqrt( numblobs ) - 1 ) / 4 + 1 );
+        this.theater.scene.remove(this.group);
 
-        for ( let i = 0; i < numblobs; i ++ ) {
-            const ballx = Math.sin( i + 1.26 * (time * 0.25) * ( 1.03 + 0.5 * Math.cos( 0.21 * i ) ) ) * 0.27 + 0.5;
-            const bally = Math.abs( Math.cos( i + 1.12 * (time * 0.5) * Math.cos( 1.22 + 0.1424 * i ) ) ) * 0.77; // dip into the floor
-            const ballz = Math.cos( i + 1.32 * (time * 0.25) * 0.1 * Math.sin( ( 0.92 + 0.53 * i ) ) ) * 0.27 + 0.5;
+        this.group.children.forEach(child => {
+            if (child.geometry) {
+                child.geometry.dispose(); // Dispose of geometry to free memory
+            }
+            if (child.material) {
+                // If the material has textures, they should be disposed of as well
+                if (Array.isArray(child.material)) {
+                    child.material.forEach(mat => {
+                        if (mat.map) mat.map.dispose();
+                        mat.dispose(); // Dispose of material
+                    });
+                } else {
+                    if (child.material.map) child.material.map.dispose();
+                    child.material.dispose(); // Dispose of material
+                }
+            }
+        });
 
-            object.addBall( ballx, bally, ballz, strength, subtract );
-
-        }
-
-        object.update();
-
+        this.group.clear(); // Clear the children from the group
+        this.group = null; // Remove reference to the group to allow garbage collection
     }
 }
 

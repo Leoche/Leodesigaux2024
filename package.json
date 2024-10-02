@@ -22,6 +22,7 @@
     "perlin-simplex": "^0.0.3",
     "simplex-noise": "^4.0.2",
     "stats.js": "^0.17.0",
+    "swiper": "^11.1.14",
     "three": "^0.166.1",
     "vue": "latest"
   },

@@ -20,35 +20,35 @@
                             </div>
                             <div class="hidden md:block md:w-4/12"></div>
                             <div class="hidden  md:block md:w-4/12"></div>
-                            <nav class="md:ml-auto flex flex-col gap-2 text-sm text-slate-400 md:w-4/12">
-                                <span class="pb-1 md:pb-4">NAVIGATION</span>
+                            <nav class="md:ml-auto flex flex-col gap-2 text-sm md:w-4/12">
+                                <span class="pb-1 md:pb-4 text-ld-50 ">NAVIGATION</span>
                                 <NuxtLink class="link-brutal mr-auto" to="/about"><span class="cursor-link">{{ $t('About') }}</span></NuxtLink>
                                 <NuxtLink class="link-brutal mr-auto" to="/works"><span class="cursor-link">{{ $t('Works') }}</span></NuxtLink>
                                 <NuxtLink class="link-brutal mr-auto" to="/blog"><span class="cursor-link">{{ $t('Blog') }}</span></NuxtLink>
                                 <NuxtLink class="link-brutal mr-auto" to="/labs"><span class="cursor-link">{{ $t('Labs') }}</span></NuxtLink>
-                                <NuxtLink class="link-brutal mr-auto" to="/contact"><span class="cursor-link">{{ $t('Contact') }}</span></NuxtLink>
+                                <NuxtLink class="link-brutal mr-auto" to="mailto:hello@leodesigaux.com"><span class="cursor-link">{{ $t('Contact') }}</span></NuxtLink>
                             </nav>
                         </div>
                     </div>
                     <div class="container mx-auto shadow-[1px_0px_0px_#ffffff11,-1px_0px_0px_#ffffff11]">
                         <div class="subfooter flex flex-col md:flex-row p-8 gap-8 container mx-auto mt-auto justify-between shadow-[0px_-1px_0px_#ffffff11] items-center">
                             <div class="socials flex gap-4 mt-auto text-ld-300/60">
-                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
+                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="https://github.com/Leoche" target="_blank">
                                     <Icon name="ri:github-fill" size="24" />
                                 </a>
-                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
+                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="https://www.linkedin.com/in/leodesigaux/" target="_blank">
                                     <Icon name="ri:linkedin-fill" size="24" />
                                 </a>
-                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
+                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="https://twitter.com/le0che" target="_blank">
                                     <Icon name="ri:twitter-fill" size="24" />
                                 </a>
-                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
+                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="https://soundcloud.com/leodes" target="_blank">
                                     <Icon name="ri:soundcloud-fill" size="24" />
                                 </a>
-                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
+                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="https://steamcommunity.com/profiles/76561198408871306/" target="_blank">
                                     <Icon name="ri:steam-fill" size="24" />
                                 </a>
-                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="google.com" target="_blank">
+                                <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="https://twitch.tv/leoche" target="_blank">
                                     <Icon name="ri:twitch-fill" size="24" />
                                 </a>
                                 <a class="cursor-link w-6 h-6 flex mb-auto hover:text-ld-50 transition" href="https://discordapp.com/users/495297000481357834" target="_blank">
@@ -56,8 +56,8 @@
                                 </a>
                             </div>
                             <div class="copyright flex flex-col md:flex-row gap-2 text-xs text-center md:text-left">
-                                <span class="text-ldsemibackground uppercase">Made in France - © 2024 Léo Desigaux</span>
-                                <span class="text-ldsemibackground uppercase">All rights reserved</span>
+                                <span class="text-ldsemibackground uppercase">{{ $t("Made in France - © 2024 Léo Desigaux") }}</span>
+                                <span class="text-ldsemibackground uppercase">{{ $t("All rights reserved") }}</span>
                             </div>
                         </div>
                     </div>

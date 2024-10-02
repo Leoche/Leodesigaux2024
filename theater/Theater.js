@@ -72,14 +72,14 @@ class Theater {
             invert: true,
             resolution: 0.125
         });
-        this.effect.setSize(window.screen.width, window.screen.height);
+        this.effect.setSize(this.getSize().width, this.getSize().height);
         this.effect.domElement.style.color = '#999999';
         this.effect.domElement.style.backgroundColor = 'black';
 
         document.querySelector('#background').appendChild(this.effect.domElement);
         window.addEventListener('resize', () => this.onWindowResize());
 
-        this.renderTarget = new THREE.WebGLRenderTarget(window.screen.width, window.screen.height, {
+        this.renderTarget = new THREE.WebGLRenderTarget(this.getSize().width, this.getSize().height, {
             format: THREE.RGBAFormat,  // Ensure RGBA format to include alpha channel
             type: THREE.UnsignedByteType,
             stencilBuffer: false
@@ -95,9 +95,28 @@ class Theater {
         this.setupOrbit();
 
         this.animate();
+        this.checkWindowSize();
+        window.addEventListener('resize', () => this.checkWindowSize());
+    }
+    checkWindowSize() {
+        const currentWidth = window.innerWidth;
+        const isMobileNow = currentWidth < 767;
+
+        if (window.isMobile !== isMobileNow) {
+            window.isMobile = isMobileNow;
+
+            // Emit custom event 'breakpointChanged'
+            const event = new CustomEvent('breakpointChanged', {
+                detail: { isMobile: window.isMobile }
+            });
+            window.dispatchEvent(event);
+        }
     }
     switch(state) {
         this.stateManager.switch(state);
+    }
+    getSize() {
+        return !window.isMobile ? { width: window.innerWidth, height: window.innerHeight } : { width: window.screen.width, height: window.screen.height };
     }
     createLights() {
         this.pointLight1 = new THREE.PointLight(0x9bafff, 50, 0, 0);
@@ -138,14 +157,14 @@ class Theater {
     }
 
     onWindowResize() {
-        this.camera.aspect = window.screen.width / window.screen.height;
+        this.camera.aspect = this.getSize().width / this.getSize().height;
         this.camera.updateProjectionMatrix();
-        this.renderer.setSize(window.screen.width, window.screen.height);
-        this.effect.setSize(window.screen.width, window.screen.height);
-        this.composer.setSize(window.screen.width, window.screen.height);
-        this.camera.aspect = window.screen.width / window.screen.height;
-        this.asciiShader.uniforms.iResolution.value.set(window.screen.width, window.screen.height, 1);
-        this.renderTarget.setSize(window.screen.width, window.screen.height);
+        this.renderer.setSize(this.getSize().width, this.getSize().height);
+        this.effect.setSize(this.getSize().width, this.getSize().height);
+        this.composer.setSize(this.getSize().width, this.getSize().height);
+        this.camera.aspect = this.getSize().width / this.getSize().height;
+        this.asciiShader.uniforms.iResolution.value.set(this.getSize().width, this.getSize().height, 1);
+        this.renderTarget.setSize(this.getSize().width, this.getSize().height);
         this.composer.removePass(this.composer.passes[1]);
         this.asciiPass = new ShaderPass(this.asciiShader);
         this.composer.addPass(this.asciiPass);

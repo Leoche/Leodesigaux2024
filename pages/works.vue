@@ -4,7 +4,7 @@
       <div class="p-4 md:p-8 gap-4">
         <div class="flex pb-6 justify-between">
           <div class="h1-container md:-translate-x-4">
-            <h1 class="h1-heading pr-4 ~text-[4rem]/[8rem] max-h-[120px] flex relative overflow-hidden bold text-center tracking-tighter bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] [background-position:-10%_65%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold">
+            <h1 class="h1-heading pr-4 ~text-[4rem]/[8rem] max-h-[64px] md:max-h-[120px] flex relative overflow-hidden bold text-center tracking-tighter bg-[radial-gradient(white,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] [background-position:-10%_65%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold">
               <span class="h1-heading-span" v-for="letter in $t('Works').split('')" :key="letter">{{ letter }}</span>
             </h1>
           </div>

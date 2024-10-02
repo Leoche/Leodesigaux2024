@@ -43,8 +43,6 @@ class MouseManager {
         }
         if (this.initialized) return;
         if (window.isMobile) {
-            // For mobile devices, use touch events
-            console.log("asda");
             this.initialized = true;
 
             window.addEventListener("touchmove", event => { this.mousemove(event) }, false);
@@ -121,6 +119,9 @@ class MouseManager {
     animate(time) {
         if (window.isMobile) return;
         if (this.cursormouseLookAt != null) {
+            if (this.cursormouseLookAt.querySelector(".cursor-arrow")) {
+                this.cursormouseLookAt = this.cursormouseLookAt.querySelector(".cursor-arrow")
+            }
             if (this.cursormouseLookAt.classList.contains("circle_container")) {
                 this.cursormouseR = lerp(this.cursormouseR, this.cursormouseLookAt.getBoundingClientRect().width / 2 * 1.05, 0.2);
                 this.dom.cursorCircle.setAttribute("stroke-width", 2);

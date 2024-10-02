@@ -11,6 +11,11 @@ query allLabs {
         content
         title
       }
+      tags {
+        nodes {
+          name
+        }
+      }
       labsAcf {
         category
         css
@@ -19,6 +24,7 @@ query allLabs {
         iframe
         html
         github
+        codepen
         img {
           node {
             mediaItemUrl

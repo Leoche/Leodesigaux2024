@@ -58,7 +58,7 @@
               <h2 class="title bg-clip-text ~leading-[2.3rem]/[3.5rem] text-center pb-1 ~text-[1.8rem]/[2.7rem] w-full bg-[radial-gradient(white,#8b75b2_40%)] [background-position:-50%_160%] bg-[length:200%_400%] text-transparent font-bold tracking-tighter">{{ $t("Let's make something bright together") }}</h2>
             </div>
             <p class="px-4 md:px-0 pt-4 pb-2 bg-clip-text subtitle w-full text-center ~text-[1rem]/[1.25rem] bg-[radial-gradient(white,#8b75b2_40%)] [background-position:150%_200%] bg-[length:200%_400%] text-transparent ">{{ $t("Have a project or want to talk about your ideas?") }}</p> <!-- -250% -->
-            <p class="mailto text-ld-700 ~text-[0.8rem]/[1rem]">{{ $t("Contact me at ") }}<a class="email inline-block relative" href="mailto:leo@desigaux.com"><span class="absolute h-[1px] w-full bg-ld-400 bottom-0 right-0 scale-x-0 emailline origin-right"></span>leo@desigaux.com</a></p>
+            <p class="mailto text-ld-700 ~text-[0.8rem]/[1rem]">{{ $t("Contact me at ") }}<a class="email inline-block relative" href="mailto:hello@leodesigaux.com"><span class="absolute h-[1px] w-full bg-ld-400 bottom-0 right-0 scale-x-0 emailline origin-right"></span>hello@leodesigaux.com</a></p>
           </div>
         </div>
       </div>

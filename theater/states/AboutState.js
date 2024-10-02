@@ -24,7 +24,7 @@ class AboutState extends State {
         this.offsetX = 0;
         this.baseOffsetX = -35;
         this.baseOffsetY = window.isMobile ? 500 : 150;
-        this.gltfOffsetY = window.isMobile ? window.screen.height * -0.3 : 0;
+        this.gltfOffsetY = window.isMobile ? this.theater.getSize().height * -0.2 : 0;
         this.group = new THREE.Group();
         this.rotationZ = 0;
         this.rotationX = 0;
@@ -107,18 +107,17 @@ class AboutState extends State {
             this.group.scale.set(0.5, 0.5, 0.5);
         }
         this.gltf = null;
-        this.gltfGroup = new THREE.Group();
 
         const loaderGltf = new GLTFLoader();
         const dracoLoader = new DRACOLoader();
         dracoLoader.setDecoderConfig({ type: 'js' });
         dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
         loaderGltf.setDRACOLoader( dracoLoader );
-        loaderGltf.load("/models/head3.glb", (gltf) => {
+        loaderGltf.load("/models/head.glb", (gltf) => {
             gltf.scenes[0].children[0].scale.set(this.headScale, this.headScale, this.headScale);
             gltf.scenes[0].children[0].material = this.material;
             if(window.isMobile) {
-                gltf.scenes[0].children[0].position.x = 0;
+                gltf.scenes[0].children[0].position.x = 100;
             } else {
                 gltf.scenes[0].children[0].position.x = -600;
             }
@@ -165,6 +164,7 @@ class AboutState extends State {
             const scrollMax = -window.screen.height + Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
             this.gltf.position.y = lerp(this.gltf.position.y, this.gltfOffsetY + Math.sin(time)*50, 0.05);
             this.gltf.rotation.x = gsap.utils.mapRange(0, scrollMax, 0, -0.90, scrollTop);
+            this.gltf.rotation.y = -0.3;
         }
 
         this.group.position.y = lerp(this.group.position.y, scrollTop * 0.3, 0.05);

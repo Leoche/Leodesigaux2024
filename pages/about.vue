@@ -1,24 +1,24 @@
 <template>
   <div class="rootPage">
     <div class="min-h-screen w-full">
-      <div class="container px-4 ~text-[1rem]/[1.25rem] ~leading-[1.3rem]/[1.7rem] max-w-[760px] pt-12 md:pt-24 pb-16 md:pb-48 flex flex-col mx-auto">
+      <div class="container px-4 ~text-[0.9rem]/[1.25rem] ~leading-[1.3rem]/[1.7rem] max-w-[760px] pt-12 md:pt-24 pb-16 md:pb-48 flex flex-col mx-auto">
         <div class="about-text backdrop-blur bg-[#00000066] border-2 border-[#a5a5a51c] px-5 md:px-8 pt-9 pb-4 md:py-9 md:py-12 rounded-xl translate-y-10 opacity-0">
-          <p class="sentence pb-6 md:pb-12 flex flex-wrap gap-x-2 ~text-[2rem]/[3rem] text-ld-100">{{ $t('Hello!') }}
+          <p class="sentence pb-6 md:pb-12 flex flex-wrap gap-x-1 md:gap-x-2 ~text-[2rem]/[3rem] text-ld-100">{{ $t('Hello!') }}
           </p>
-          <p class="sentence pb-5 md:pb-7 flex flex-wrap gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('I am *Leo, a web developer since I was 13 years old. *A *passion that has accompanied me throughout my life.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
-          <p class="sentence pb-5 md:pb-7 flex flex-wrap gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('Today, with over *17 *years *of *experience, I have turned this passion into a career that I love.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
-          <p class="sentence pb-5 md:pb-7 flex flex-wrap gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('Always looking for new technologies to explore and push the limits of what is possible through experimentation.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
-          <p class="sentence pb-8 md:pb-12 flex flex-wrap gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('I also develop *video *games, which allows me to add a playful touch to my projects.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
+          <p class="sentence pb-5 md:pb-7 flex flex-wrap gap-x-1 md:gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('I am *Leo, a web developer since I was 13 years old. *A *passion that has accompanied me throughout my life.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
+          <p class="sentence pb-5 md:pb-7 flex flex-wrap gap-x-1 md:gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('Today, with over *17 *years *of *experience, I have turned this passion into a career that I love.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
+          <p class="sentence pb-5 md:pb-7 flex flex-wrap gap-x-1 md:gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('Always looking for new technologies to explore and push the limits of what is possible through experimentation.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
+          <p class="sentence pb-8 md:pb-12 flex flex-wrap gap-x-1 md:gap-x-2 text-ld-500"><span class="word" :class="{ higlighted: word.includes('*') }" v-for="(word, index) in $t('I also develop *video *games, which allows me to add a playful touch to my projects.').split(' ')" :key="'0' + word + index">{{ word.replace('*', '') }}</span></p>
 
 
-          <p class="sentence sentencehiglighted pb-8 md:pb-10 flex flex-wrap gap-x-2 ~text-[1.25rem]/[1.5rem] ~leading-[1.5rem]/[1.9rem]"><span class="word" v-for="(word, index) in $t('Want to bring your ideas to life or discuss your next project?').split(' ')" :key="'0' + word + index">
+          <p class="sentence sentencehiglighted pb-8 md:pb-10 flex flex-wrap gap-x-1 md:gap-x-2 "><span class="word" v-for="(word, index) in $t('Want to bring your ideas to life or discuss your next project?').split(' ')" :key="'0' + word + index">
               <span class="letter higlighted" v-for="(letter, index) in word.replace('*', '').split('')" :key="'0' + letter + index">{{ letter == " " ? "&nbsp;" : letter }}</span>
             </span>
           </p>
-          <div class="sentence sentencehiglighted flex flex-col md:flex-row gap-4 md:justify-between md:gap-0">
-            <a href="mailto:leo@desigaux.fr" class="flex gap-2 items-center hover:gap-3 transition-all text-ld-300 rounded-full flex-shrink-0">
-              <span class="word" v-for="(word, index) in $t('Contact-me at *leodesigaux.fr').split(' ')" :key="'0' + word + index">
-                <span class="letter higlighted" v-for="(letter, index) in word.replace('*', '').split('')" :key="'0' + letter + index">{{ letter == " " ? "&nbsp;" : letter }}</span>
+          <div class="sentence sentencehiglighted flex flex-col gap-4 md:gap-4">
+            <a href="mailto:hello@leodesigaux.com" class="flex gap-1 md:gap-2 items-center group-hover transition-all text-ld-300 rounded-full flex-shrink-0 flex-wrap">
+              <span class="word" v-for="(word, index) in $t('Contact-me at *hello@leodesigaux.com').split(' ')" :key="'0' + word + index">
+                <span class="letter" :class="{ higlighted: word.includes('*') }" v-for="(letter, index) in word.replace('*', '').split('')" :key="'0' + letter + index">{{ letter == " " ? "&nbsp;" : letter }}</span>
               </span>
               <span class="letter inline-flex">
                 <Icon name="iconamoon:arrow-right-1"></Icon>
@@ -73,7 +73,7 @@ const animEnter = () => {
   gsap.to(document.querySelectorAll('.sentencehiglighted .letter'), {
     opacity: 1,
     y: -5,
-    ease: "back.out(8)",
+    ease: animenterInitialized ? "linear" : "back.out(8)",
     delay: animenterInitialized ? 0 : 1,
     stagger: animenterInitialized ? 0 : 0.02,
     onComplete: () => {
