@@ -5,12 +5,18 @@
         <div class="h-full flex flex-col justify-center select-none">
           <h1 ref="lettering_job" class="lettering_job" aria-label="Hi, I'm Léo DESIGAUX, a fullStack Webdevelopper">
             <div class="subtitle flex ~text-[1.3rem]/[3rem] flex-wrap tracking-[-0.05em]">
-              <span v-for="(letter, index) in $t('Hi, I\'m ').split('')" :key="'0' + letter + index" class="relative font-light	 text-ld-400 overflow-hidden pb-[2px] ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem] mb-[2px] md:mb-0" :class="{bred: index == 3 && locale.includes('en') || index == 6 && locale.includes('fr')}"><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
+              <span v-for="(letter, index) in $t('Hi, I\'m ').split('')" :key="'0' + letter + index" class="relative font-light	 text-ld-400 overflow-hidden pb-[2px] ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem] mb-[2px] md:mb-0" :class="{ bred: index == 3 && locale.includes('en') || index == 6 && locale.includes('fr') }"><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
               <span v-for="(letter, index) in 'Léo DESIGAUX'.split('')" :key="'1' + letter + index" class="relative text-ld-300 font-medium text-shadowed overflow-hidden ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem] "><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
               <span v-for="(letter, index) in $t(', a fullStack').split('')" :key="'2' + letter + index" class="relative font-light	 text-ld-400 overflow-hidden ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem]"><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
             </div>
             <div :class="getTitleClasses" class="h1-heading pr-4 flex relative bold mt-[2px] md:mt-0 text-center bg-[radial-gradient(rgb(163,166,216)_10%,rgb(120,125,219)_60%,rgb(193,159,219)_100%)] md:[background-position:105%_75%] bg-[length:150%_200%] bg-clip-text text-transparent font-bold h1-heading tracking-[-0.1em]">
               <span v-for="(letter, index) in $t('Webdevelopper').split('')" :key="'3' + letter + index" class="font-extrabold uppercase">{{ letter }}</span>
+            </div>
+            <div class="availability ~text-[0.8rem]/[1.2rem] pl-2 flex gap-1 items-center text-ld-400 translate-y-2 opacity-0">
+              <div class="relative ~w-2/3 ~h-2/3 bg-green-500 rounded-full mr-1">
+                <div class="absolute inset-0 w-full h-full bg-green-500 rounded-full animate-ripple"></div>
+              </div>
+              Available:<strong>Mid-Jan 2025</strong>
             </div>
           </h1>
         </div>
@@ -110,8 +116,8 @@ definePageMeta({
 const enterAnimate = () => {
   if (route.name === 'index') {
     let animStarted = false;
-    if(tlName) tlName.kill();
-    if(tlTitle) tlTitle.kill();
+    if (tlName) tlName.kill();
+    if (tlTitle) tlTitle.kill();
     tlName = gsap.timeline({ defaults: { ease: "expo.out" } });
     tlTitle = gsap.timeline({
       defaults: { stagger: 0.05, ease: "expo.out" }, onUpdate: () => {
@@ -131,7 +137,7 @@ const enterAnimate = () => {
       delay: isRevisited ? 0 : .8,
       stagger: function (index, target, list) {
         let stag = index * 0.03;
-        if(locale.value.includes("fr")){
+        if (locale.value.includes("fr")) {
           if (index > 5) {
             stag += .5;
           }
@@ -170,7 +176,7 @@ const enterAnimate = () => {
         amount: isRevisited ? 0 : .1
       },
       onStart: function () {
-        document.querySelectorAll(".subtitle span").forEach(item => {item.classList.remove("overflow-hidden")});
+        document.querySelectorAll(".subtitle span").forEach(item => { item.classList.remove("overflow-hidden") });
         document.querySelector(".h1-heading").classList.remove("overflow-hidden");
       }
     }, isRevisited ? 0 : 1.6)
@@ -221,6 +227,12 @@ const enterAnimate = () => {
             ease: "circ.in",
             duration: isRevisited ? 0 : .8,
             delay: isRevisited ? 0 : .3
+          }).then(() => {
+            gsap.to('.availability', {
+              y:0,
+              opacity:1,
+              ease: "circ.out"
+            })
           });
         }
       }
@@ -251,10 +263,10 @@ const enterAnimate = () => {
     }, .1);
     tlToolbelt.fromTo("#toolbelt .title", {
       opacity: 0,
-      y:64,
+      y: 64,
     }, {
       opacity: 1,
-      y:0,
+      y: 0,
       duration: 0.4,
     }, "<");
     tlToolbelt.fromTo("#toolbelt .subtitle", {
@@ -322,9 +334,9 @@ const enterAnimate = () => {
       ease: CustomEase.create("custom", "M0,0 C0.197,-0.094 0.243,1 0.5,1 0.744,1 0.808,-0.099 1,0 "),
     }, .3);
     tlSayhello.fromTo("#sayhello .liner", {
-      opacity:0,
+      opacity: 0,
     }, {
-      opacity:1,
+      opacity: 1,
       duration: duration,
       ease: CustomEase.create("custom", "M0,0 C0.3,0 0,1 0.5,1 1.01,1 0.702,0 1,0 "),
     }, .3);
@@ -355,7 +367,7 @@ const enterAnimate = () => {
       ease: "linear",
     }, 0.3);
   }
-} 
+}
 
 onMounted(() => {
   mounted = true;
@@ -366,66 +378,79 @@ onMounted(() => {
 #webdev_logo path {
   stroke-width: 0.1px;
 }
+
 .clip-pathed {
-  clip-path: polygon(
-    0% 0%,
-    0% 100%,
-    100% 100%,
-    100% calc(1.89% * var(--wave-height-factor)), /* Adjusting wave with CSS variable */
-    93.33% calc(1.41% * var(--wave-height-factor)),
-    86.67% calc(2.19% * var(--wave-height-factor)),
-    80% calc(4.13% * var(--wave-height-factor)),
-    73.33% calc(6.94% * var(--wave-height-factor)),
-    66.67% calc(10.24% * var(--wave-height-factor)),
-    60% calc(13.57% * var(--wave-height-factor)),
-    53.33% calc(16.45% * var(--wave-height-factor)),
-    46.67% calc(18.48% * var(--wave-height-factor)),
-    40% calc(19.37% * var(--wave-height-factor)),
-    33.33% calc(19.01% * var(--wave-height-factor)),
-    26.67% calc(17.43% * var(--wave-height-factor)),
-    20% calc(14.87% * var(--wave-height-factor)),
-    13.33% calc(11.68% * var(--wave-height-factor)),
-    6.67% calc(8.31% * var(--wave-height-factor)),
-    0% calc(5.24% * var(--wave-height-factor))
-  );
+  clip-path: polygon(0% 0%,
+      0% 100%,
+      100% 100%,
+      100% calc(1.89% * var(--wave-height-factor)),
+      /* Adjusting wave with CSS variable */
+      93.33% calc(1.41% * var(--wave-height-factor)),
+      86.67% calc(2.19% * var(--wave-height-factor)),
+      80% calc(4.13% * var(--wave-height-factor)),
+      73.33% calc(6.94% * var(--wave-height-factor)),
+      66.67% calc(10.24% * var(--wave-height-factor)),
+      60% calc(13.57% * var(--wave-height-factor)),
+      53.33% calc(16.45% * var(--wave-height-factor)),
+      46.67% calc(18.48% * var(--wave-height-factor)),
+      40% calc(19.37% * var(--wave-height-factor)),
+      33.33% calc(19.01% * var(--wave-height-factor)),
+      26.67% calc(17.43% * var(--wave-height-factor)),
+      20% calc(14.87% * var(--wave-height-factor)),
+      13.33% calc(11.68% * var(--wave-height-factor)),
+      6.67% calc(8.31% * var(--wave-height-factor)),
+      0% calc(5.24% * var(--wave-height-factor)));
 }
+
 @media (min-width: 1400px) {
   .clip-pathed {
-    --wave-height-factor: 0.65; /* Default for large screens */
+    --wave-height-factor: 0.65;
+    /* Default for large screens */
   }
 }
+
 @media (max-width: 1399px) and (min-width: 1200px) {
   .clip-pathed {
-    --wave-height-factor: 0.65; /* Reduce wave height */
+    --wave-height-factor: 0.65;
+    /* Reduce wave height */
   }
 }
+
 @media (max-width: 1199px) and (min-width: 768px) {
   .clip-pathed {
-    --wave-height-factor: 0.5; /* Reduce wave height */
+    --wave-height-factor: 0.5;
+    /* Reduce wave height */
   }
 }
+
 @media (max-width: 767px) and (min-width: 480px) {
   .clip-pathed {
-    --wave-height-factor: 0.3; /* Reduce wave height */
+    --wave-height-factor: 0.3;
+    /* Reduce wave height */
   }
 }
+
 @media (max-width: 479px) and (min-width: 320px) {
   .clip-pathed {
-    --wave-height-factor: 0.15; /* Reduce wave height */
+    --wave-height-factor: 0.15;
+    /* Reduce wave height */
   }
 }
+
 @media (max-width: 319px) {
   .clip-pathed {
-    --wave-height-factor: 0.1; /* Further reduce wave height */
+    --wave-height-factor: 0.1;
+    /* Further reduce wave height */
   }
 }
 
 @media (max-width: 767px) {
-.bred{
-  flex-basis: 100%;
-  height: 0;
+  .bred {
+    flex-basis: 100%;
+    height: 0;
+  }
 }
-}
+
 .marquee {
   --gap: 0.4rem;
   display: flex;
@@ -461,5 +486,30 @@ onMounted(() => {
   to {
     transform: translateX(calc(-100% - var(--gap)));
   }
+}
+
+.ripple-container {
+  position: relative;
+  width: 64px;
+  /* 16x4 (16px = 1rem) */
+  height: 64px;
+  background-color: #10B981;
+  /* Tailwind's green-500 */
+  border-radius: 50%;
+}
+@keyframes rippleEffect {
+  0%,20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5); /* Scales the ripple 4x */
+    opacity: 0;
+    background-color: #1fde9e;
+  }
+}
+
+.animate-ripple {
+  animation: rippleEffect 1.2s ease-out infinite;
 }
 </style>
