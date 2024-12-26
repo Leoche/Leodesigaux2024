@@ -33,7 +33,7 @@
         "translations": [
           {
             "title": "PinkHat",
-            "content": "<p>Jeu de combat de boss crée en collaboration avec le musicien Bromes.</p>\n"
+            "content": "<p>Jeu de combat de boss créé en collaboration avec le musicien Bromes.</p>\n"
           }
         ]
       },
@@ -225,7 +225,7 @@
         "translations": [
           {
             "title": "Delta7",
-            "content": "<p>Refonte du site Delta7 sous Symfony et de leur outils.</p>\n"
+            "content": "<p>Refonte du site Delta7 sous Symfony et de leurs outils.</p>\n"
           }
         ]
       },
@@ -339,7 +339,7 @@
         "translations": [
           {
             "title": "Altais Web",
-            "content": "<p>Refonte du site Altaisweb sous WordPress. Fait dans l\\'agence Altaisweb.</p>\n"
+            "content": "<p>Refonte du site Altaisweb sous WordPress. Fait dans l'agence Altaisweb.</p>\n"
           }
         ]
       },

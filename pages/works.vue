@@ -110,7 +110,7 @@ useHead(head);
 
 const categoryModel = defineModel({ default: "all" });
 const typeModel = ref(["perso", "pro"]);
-
+let mounted = false;
 definePageMeta({
   pageTransition: {
     name: 'page',
@@ -148,18 +148,7 @@ onMounted(async () => {
       },
     }
   );
-
-  gsap.fromTo(
-    ".h1-heading",
-    { opacity: 0.2 },
-    { opacity: 1, duration: 1, delay: 1.5, ease: "power1.inOut" }
-  );
-
-  gsap.fromTo(
-    ".h1-heading-span",
-    { lineHeight: 3 },
-    { lineHeight: 1, duration: .8, stagger: .1, delay: 0.1, ease: "expo.out" }
-  );
+  mounted = true;
 });
 
 const dataFilter = computed(() => {
@@ -187,7 +176,7 @@ const dataFilter = computed(() => {
   return filteredData;
 });
 
-const changeLocale = () => {
+const changeLocale = async () => {
   head.value = {
     title: t('Works') + ' - Léo DESIGAUX, ' + t('Webdevelopper')
   }
@@ -206,6 +195,17 @@ const changeLocale = () => {
   localWorks.value.works.nodes.sort((a, b) => {
     return Date.parse(b.workAcf.date) - Date.parse(a.workAcf.date);
   });
+  await nextTick();
+  gsap.fromTo(
+    ".h1-heading",
+    { opacity: 0.2 },
+    { opacity: 1, duration: mounted ? 0 : 1, delay: 1.5, ease: "power1.inOut" }
+  );
+  gsap.fromTo(
+    ".h1-heading-span",
+    { lineHeight: 3 },
+    { lineHeight: 1, duration: mounted ? 0 : .8, stagger: .1, delay: 0.1, ease: "expo.out" }
+  );
 };
 watch(locale, changeLocale, { immediate: true });
 const beforeLeave = (el) => {

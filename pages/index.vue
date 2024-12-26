@@ -4,7 +4,7 @@
       <div class="container mx-auto h-full overflow-clip px-6 md:px-8">
         <div class="h-full flex flex-col justify-center select-none">
           <h1 ref="lettering_job" class="lettering_job" aria-label="Hi, I'm Léo DESIGAUX, a fullStack Webdevelopper">
-            <div class="subtitle flex ~text-[1.3rem]/[3rem] flex-wrap tracking-[-0.05em]">
+            <div class="subtitle flex ~text-[1.3rem]/[3rem] flex-wrap tracking-[-0.025em]">
               <span v-for="(letter, index) in $t('Hi, I\'m ').split('')" :key="'0' + letter + index" class="relative font-light	 text-ld-400 overflow-hidden pb-[2px] ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem] mb-[2px] md:mb-0" :class="{bred: index == 3 && locale.includes('en') || index == 6 && locale.includes('fr')}"><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
               <span v-for="(letter, index) in 'Léo DESIGAUX'.split('')" :key="'1' + letter + index" class="relative text-ld-300 font-medium text-shadowed overflow-hidden ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem] "><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
               <span v-for="(letter, index) in $t(', a fullStack').split('')" :key="'2' + letter + index" class="relative font-light	 text-ld-400 overflow-hidden ~max-h-[1.3rem]/[3.5rem] ~leading-[1rem]/[3rem]"><span class="block">{{ letter == " " ? "&nbsp;" : letter }}</span></span>
@@ -22,7 +22,7 @@
           <div class="flex flex-col justify-center gap-4 md:gap-8">
             <div class="origin-left line bg-ld-200 h-1 w-24 rounded-full shadow-[0_16px_32px_#c19fdb,0_32px_48px_#c19fdb,0_1px_5px_#c19fdb]"></div>
             <h2 class="title ~text-[2.4rem]/[4.5rem] select-none ~leading-[2.6rem]/[4.5rem] bg-[radial-gradient(white,#8b75b2_40%)] bg-clip-text [background-position:140%_60%] bg-[length:200%_400%] text-transparent font-bold">{{ $t("What’s in my ") }}<br />{{ $t(" tool belt ?") }}</h2>
-            <p class="subtitle ~text-[1rem]/[2rem] select-none text-ld-500">{{ $t("The tools i work with") }}</p>
+            <p class="subtitle ~text-[1rem]/[2rem] select-none font-light text-ld-500">{{ $t("The tools i work with") }}</p>
           </div>
           <div class="flex flex-col gap-4 py-8 md:py-16 md:-ml-16 -mx-2 md:mx-0">
             <div class="logos-container inline-flex md:ml-32 flex-col py-4 md:py-6 md:pb-4 px-4 md:px-8 gap-1 rounded-xl bg-gradient-to-r from-ld-500/20 mr-auto">
