@@ -40,7 +40,7 @@ class AboutState extends State {
         this.material = new THREE.MeshPhongMaterial(this.theater.materialParams);
         const loader = new FontLoader();
 
-        loader.load( 'fonts/helvetiker_regular.typeface.json', ( font ) => {
+        loader.load( '/fonts/helvetiker_regular.typeface.json', ( font ) => {
             "About".split('').forEach((letter, index) => {
                 const geometry = new TextGeometry( letter, {
                     font: font,

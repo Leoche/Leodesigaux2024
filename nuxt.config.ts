@@ -1,10 +1,11 @@
 import { posts } from './content/posts.json'
+import { experiments } from './content/labs.json'
 import en from './locales/en.json'
 import fr from './locales/fr.json'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxtjs/i18n"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxtjs/i18n", "nuxt-gtag"],
   ssr: false,
   css: ['highlight.js/styles/github-dark.min.css'],
   experimental: {
@@ -25,6 +26,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+  gtag: {
+    id: 'G-33KZWYGFGV'
+  },
   watch:[
     "theater/*",
     "assets/*",
@@ -40,9 +44,19 @@ export default defineNuxtConfig({
       posts.nodes.forEach(post => {
         nitroConfig.prerender.routes.push("/blog/" + post.slug);
       });
+      experiments.nodes.forEach(post => {
+        nitroConfig.prerender.routes.push("/labs/" + post.slug);
+      });
     },
   },
   i18n: {
     vueI18n: './i18n.config.js',
-  }
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirectedasdossmain',
+      redirectOn: 'root',
+      alwaysRedirect: true,
+      cookieCrossOrigin: true
+    }
+  },
 })
